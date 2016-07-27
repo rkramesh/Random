@@ -5,7 +5,7 @@ import urllib2
 import csv
 import xmltodict
 searchprint = '(CR-\d+.*?)'
-rawdata = '16.4changeset - Copy.csv'
+rawdata = 'changeset - Copy.csv'
 dupdata = 'data.txt'
 sortdata = 'sorted.txt'
 def findallreview():
@@ -45,7 +45,7 @@ def finddata():
      with open(sortdata, 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.cuc.com/cru/'+line+'/comments.txt'
+               durl='http://fisheye.com/'+line+'/comments.txt'
                
                
                response = urllib2.urlopen(durl)
@@ -73,7 +73,7 @@ def findcomment(sortdata):
      with open(sortdata, 'r') as f:
           for line in f:
            line = line.strip('\n')
-           durl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+line+'/comments/'
+           durl ='http://fisheye.com/rest-service/reviews-v1/'+line+'/comments/'
            print durl
            response = urllib2.urlopen(durl)
            op = response.read()
