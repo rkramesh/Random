@@ -1,0 +1,25 @@
+export HISTCONTROL=erasedups # don't store duplicate lines
+export HISTSIZE=100000 #remember 100k unique lines
+shopt -s histappend
+
+#fast type
+alias cd..='cd ../'                         # Go back 1  level 
+alias ..='cd ../'                           # Go back 1  level
+alias ...='cd ../../'                       # Go back 2  levels
+alias .3='cd ../../../'                     # Go back 3  levels
+alias .4='cd ../../../../'                  # Go back 4  levels
+alias .5='cd ../../../../../'               # Go back 5  levels
+alias .6='cd ../../../../../../'            # Go back 6  levels
+alias c='clear'  
+
+# Python server
+#   ------------------------------------------------------------
+alias server='python -m SimpleHTTPServer 8000'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias lanip="ipconfig getifaddr en1"
+alias ipl="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
