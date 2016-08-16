@@ -1,3 +1,4 @@
+#bash to be included
 export HISTCONTROL=erasedups # don't store duplicate lines
 export HISTSIZE=100000 #remember 100k unique lines
 shopt -s histappend
