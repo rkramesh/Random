@@ -1,2 +1,2 @@
 # Random
-Nothing Interesting here.. these scipts wont work for you
+Nothing Interesting here.. these scripts may/not work for you
