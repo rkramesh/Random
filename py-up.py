@@ -4,7 +4,6 @@
 
 This module builds on BaseHTTPServer by implementing the standard GET
 and HEAD requests in a fairly straightforward manner.
-
 """
 
 
