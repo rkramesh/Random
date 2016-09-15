@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# script for connecting  and accepting passwordless ssh
+
 filename="id_rsa"
 path="$HOME/.ssh"
 
