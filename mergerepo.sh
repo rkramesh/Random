@@ -1,4 +1,6 @@
 #!/bin/sh
+#run this in crontab 
+
 
 SYNCSCRIPT="/path/to/svnautomerge.sh"
  
