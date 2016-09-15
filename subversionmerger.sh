@@ -7,7 +7,6 @@ tail_version=`echo $versions | awk '{print $NF}' | grep -o '[0-9]*$'`
 merge_cmd="svn merge -r $tail_version:$head_version $2 ."
  
 echo 'Preparing environment:'
-rm -rf khotyn_tmp && mkdir khotyn_tmp && cd khotyn_tmp
 echo "Preparing environment done!\nChecking out $1"
 svn co $1 .
 echo "Checking out $1 done!\nMerging branches:$merge_cmd"
