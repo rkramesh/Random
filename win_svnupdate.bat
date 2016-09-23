@@ -1,3 +1,5 @@
+
+rem this script will update all the subversion folders to the latest revision 
 rem add TortoiseProc.exe to the path
 rem START TortoiseProc.exe /command:update /path:"C:\www\MyRepo\" /closeonend:0
 
