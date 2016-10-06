@@ -2,10 +2,14 @@
 import os
 import re
 import urllib2
+import urllib
 import csv
 import xmltodict
+from collections import defaultdict
+#from itertools import islice
+#from linecache import getline
 searchprint = '(CR-\d+.*?)'
-rawdata = 'changeset - Copy.csv'
+rawdata = '16.9log'
 dupdata = 'data.txt'
 sortdata = 'sorted.txt'
 def findallreview():
@@ -45,9 +49,8 @@ def finddata():
      with open(sortdata, 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.com/'+line+'/comments.txt'
-               
-               
+               durl='http://fisheye.cuc.com/cru/'+line+'/comments.txt'
+               print durl
                response = urllib2.urlopen(durl)
                op = response.read()
                #print op
@@ -62,18 +65,20 @@ def finddata():
                    #print matches
                    revdata = dict(zip(matches, names))
                    repdata = dict(zip(rematches, renames))
-                   writer = csv.writer(open('dict.csv', 'ab'))
+                   print revdata
+                   print 
+                   writer = csv.writer(open(rawdata+'.csv', 'ab'))
                    for (key, value), (key1, value1) in zip(revdata.items(), repdata.items()):
                        writer.writerow([line, key, value, key1, value1 ])
                else:
                     print 'No Comments found for '+line
            #print op
-def findcomment(sortdata):
+def findcomment():
      'Dummy module for crucible rest services'
      with open(sortdata, 'r') as f:
           for line in f:
            line = line.strip('\n')
-           durl ='http://fisheye.com/rest-service/reviews-v1/'+line+'/comments/'
+           durl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+line+'/comments/'
            print durl
            response = urllib2.urlopen(durl)
            op = response.read()
@@ -82,10 +87,94 @@ def findcomment(sortdata):
            username = re.findall('<displayName>(.*?)</displayName>.*</replies>.*?</replies>' , op ,re.DOTALL)
            print matches
            print username
-           
+
+def findcsvcomment():
+     with open(sortdata, 'r') as f:
+         for line in f:
+               line = line.strip('\n')
+               #print line
+               #durl ='http://fisheye.cuc.com/cru/'+line+'/reviewHistoryWrapper?content=details'
+               durl ='http://fisheye.cuc.com/cru/'+line+'/reviewHistory'
+               print durl
+               try:
+                   response = urllib2.urlopen(durl)
+               except urllib2.HTTPError:
+                   pass
+               op = response.read()
+               #print op
+               #matches = re.findall('.*userorcommitter-parent.*? \n.*?\n\n (.*?)\n', op ,re.DOTALL)
+               matches = re.findall('<a class="user  userorcommitter-parent".*<span class="linkText">(.*)</span></a>', op )
+               if matches:
+                   print(list(islice(matches, 3))[-2])
+                   
+               
+               #comments = re.findall('<a class="user  userorcommitter-parent".*<span class="linkText.*</span></a>', op )
+               print matches
+def csvComment():
+     'Module for data to be fetched and parsed into csv'
+     print 'started'    
+     with open(sortdata, 'r') as f:
+         for line in f:
+               line = line.strip('\n')
+               durl='http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv'
+               print durl
+               testfile = urllib.URLopener()
+               testfile.retrieve('http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
+               with open(line+'.csv') as f:
+                    columns = defaultdict(list) # each value in each column is appended to a list
+                    reader = csv.DictReader(f) # read rows into a dictionary format
+                    for row in reader: # read a row as {column1: value1, column2: value2,...}
+                        for (k,v) in row.items(): # go over each column name and value
+                            columns[k].append(v) # append the value into the appropriate list
+
+                    d = dict(zip(zip(columns['Date'],columns['User'],columns['New value']),columns['Action']))
+                    print d
+                    ##print rkdict
+##                    for key, value in d.iteritems():
+##                        if value == 'COMMENT_CHANGED' or value == 'COMMENT_ADDED':
+##                            writer = csv.writer(open('final.csv', 'ab'))
+##                            for (key, value)in zip(d.items()):
+##                                       writer.writerow([line, key, value ])
+##                        else:
+##                            print 'No Comments found for '+line
+
+
+def dictcsvFinalReview():
+     print 'started'    
+     with open(sortdata, 'r') as f:
+         for line in f:
+               line = line.strip('\n')
+               durl='http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv'
+               print durl
+               testfile = urllib.URLopener()
+               os.chdir(r'C:\Users\radhakrishnanr\Desktop\filescsv')
+               testfile.retrieve('http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
+               columns = defaultdict(list) # each value in each column is appended to a list
+               with open(line+'.csv') as f:
+                    reader = csv.DictReader(f) # read rows into a dictionary format
+                    for row in reader: # read a row as {column1: value1, column2: value2,...}
+                        for (k,v) in row.items(): # go over each column name and value
+                            columns[k].append(v) # append the value into the appropriate list
+                                                 # based on column name k
+                
+               d = dict(zip(zip(columns['Date'],columns['User'],columns['New value']),columns['Action']))
+               print d
+            
+##               for key, value in d.iteritems():
+##                    if value == 'COMMENT_CHANGED' or value == 'COMMENT_ADDED':
+##                        
+##                        writer = csv.writer(open('final.csv', 'ab'))
+##                        for (key, value) in zip(d,line):
+##                            writer.writerow([line, key])
+##                    else:
+##                         print 'No Comments found for '+line
+
 searchwrite(searchprint, rawdata)
 removeDuplicate(dupdata)
-finddata()
+#finddata()
+#findcsvcomment()
+#csvComment()
+dictcsvFinalReview()
 'Removing logdata'
 try:
     os.remove(sortdata)
