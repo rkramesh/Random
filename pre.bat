@@ -15,7 +15,7 @@ FOR /D %%A IN (*) DO (
 	echo merging "%trunk%" to "%branch%"
 	svn info "%trunk%" | findstr /B URL >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
 	svn info "%branch%"  | findstr /B URL >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
-	svn merge "%trunk%"  "%branch% --accept postpone >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
+	svn merge "%trunk%/%%A"  "%branch%/%%A --accept postpone >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
 	
 	CD %home%
 	)
