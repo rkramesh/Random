@@ -17,9 +17,9 @@ goto finish
 :specific
 echo example:
 echo(
-echo checklog.bat https://scm.virtusa.com/affinioncmb/branches/RELEASE2/Affinion.LoyaltyBuild.Api.Search  {2016-11-01}:{2016-12-04}
+echo checklog.bat https://scm.com/branches/RELEASE2/ {2016-11-01}:{2016-12-04}
 echo(                                               or
-echo checklog.bat https://scm.virtusa.com/affinioncmb/branches/RELEASE2/Affinion.LoyaltyBuild.Api.Search  11724:11750
+echo checklog.bat https://scm.com/branches/RELEASE2/  11724:11750
 echo(
 goto err
 
