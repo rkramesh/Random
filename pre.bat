@@ -10,7 +10,7 @@ set trunk=
 CD %home%
 FOR /D %%A IN (*) DO (
     CD %%A
-	echo Starting merge for branch %%A >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
+	echo Starting merge for %branch%/%%A >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
 	
 	echo merging "%trunk%" to "%branch%"
 	svn info "%trunk%" | findstr /B URL >> %log%/%d%-merge.txt 2>> %log%/%d%_mergeerror.txt
