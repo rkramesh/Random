@@ -3,7 +3,8 @@ import os
 import re
 import urllib2
 import urllib
-import csv
+import csv,requests,bs4,linecache,wget,codecs,tempfile
+
 import xmltodict
 from collections import defaultdict
 #from itertools import islice
@@ -169,15 +170,104 @@ def dictcsvFinalReview():
 ##                    else:
 ##                         print 'No Comments found for '+line
 
+def cota():
+               line='cr-4914'
+               durl='http://fisheye.cuc.com/cru/cr-4914/comments.txt'
+               print durl
+               response = urllib2.urlopen(durl)
+               op = response.read()
+               #print op
+               matches = re.findall('Revision Comment.*? \n.*?\n\n (.*?)\n', op ,re.DOTALL)
+               #print matches
+               if  matches :
+                   print 'Fetching Comments for '+line
+                   names = re.findall('Revision Comment by (.*?) on', op ,re.DOTALL)
+                   renames = re.findall('Reply by (.*?) on', op ,re.DOTALL)
+                   rematches = re.findall('Reply by .*?>(.*?)\n\n.*?', op ,re.DOTALL)
+                   #print("\n".join(map(str, matches)))
+                   #print matches
+                   revdata = dict(zip(matches, names))
+                   repdata = dict(zip(rematches, renames))
+##                   print revdata,repdata
+                 
+##                   writer = csv.writer(open(rawdata+'.csv', 'ab'))
+                   for (key, value), (key1, value1) in zip(revdata.items(), repdata.items()):
+                       print key +' - '+value
+                       print ' Reply - '+key1 +' - '+value1
+                       
+##                       writer.writerow([line, key, value, key1, value1 ])
+               else:
+                    print 'No Comments found for '+line
+def dota():
+       'Dummy module for crucible rest services'
+       line='cr-4914'
+       durl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+line+'/comments/'
+       print durl
+       response = urllib2.urlopen(durl)
+       op = response.read()
+       print op
+       matches = re.findall('<message>(.*?)</message>.*</replies>.*?</replies>' , op ,re.DOTALL)
+       username = re.findall('<displayName>(.*?)</displayName>.*</replies>.*?</replies>' , op ,re.DOTALL)
+       print matches
+       print username
+
+def getcom():
+     'Module for data to be fetched and parsed into csv'
+     print 'started'
+     final = open(rawdata+'.txt', 'w')
+     with open(sortdata, 'r') as f:
+         for rid in f:
+                rid = rid.strip('\n')
+                cmurl='http://fisheye.cuc.com/cru/'+rid+'/comments.txt'
+                rurl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+rid+'/comments/'
+                
+                
+                response = requests.get(rurl,
+                                        headers={'User-agent': 'Mozilla/5.0 (Windows NT '
+                                                               '6.2; WOW64) AppleWebKit/'
+                                                               '537.36 (KHTML, like '
+                                                               'Gecko) Chrome/37.0.2062.'
+                                                               '120 Safari/537.36'})
+                soup = bs4.BeautifulSoup(response.content, "html.parser")
+                                               
+                tempfile='tmp/temp-'+rid+'.txt'
+                wget.download(cmurl,tempfile)
+                
+                if soup.find_all(re.compile(r'message')):
+                    print 'Fetching comments found for '+rid
+                    
+                    for tag in soup.find_all(re.compile(r'message')):
+    ##                     tempfile='tmp/temp-'+rid+'.txt'
+    ##                     wget.download(cmurl,tempfile)
+                         
+                         
+                         with open(tempfile) as f:
+                            
+                             for num,line in enumerate(f, 1,):
+                                 line=line.decode('utf-8')
+                                 if tag.text in line:
+                                     if line.startswith ('  >'):
+                                         reply = linecache.getline(tempfile,num-1)
+                                         final.write(rid+'|'+reply.strip()+'|'+line.strip()+'\n')
+##                                         print rid+'##'+reply.strip()+'##'+line.strip()
+                                         
+                                         
+                                     else:
+                                         comment = linecache.getline(tempfile,num-3)
+                                         final.write(rid+'|'+comment.strip()+'|'+line.strip()+'\n')
+##                                         print rid+'##'+comment.strip()+'##'+line.strip()
+                else:
+                     print 'No comments found for '+rid
+
 searchwrite(searchprint, rawdata)
 removeDuplicate(dupdata)
-#finddata()
-#findcsvcomment()
-#csvComment()
-dictcsvFinalReview()
+getcom()
+
+#dictcsvFinalReview()
 'Removing logdata'
 try:
     os.remove(sortdata)
     os.remove(dupdata)
+    
 except OSError:
     pass
