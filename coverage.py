@@ -18,12 +18,15 @@ headers = {
 response = requests.get(ciresturl+'/builds/id:147694/statistics',headers)
 #print response.content
 
-soup = bs4.BeautifulSoup(response.content, "html.parser")
-for tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-    print tag['name']+':'+tag['value']
+def getCoverage():
+    
+    response = requests.get(ciresturl+'/builds/id:147694/statistics',headers)
+    soup = bs4.BeautifulSoup(response.content, "html.parser")
+    for tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
+        print tag['name']+':'+tag['value']
     
                    
     
-
+getCoverage()
     
 
