@@ -15,18 +15,27 @@ headers = {
     "Connection": "keep-alive",
     "Content-Type": "text/html;charset=utf-8"
 }
-response = requests.get(ciresturl+'/builds/id:147694/statistics',headers)
-#print response.content
+response = requests.get(ciresturl+'/builds/',headers,stream=False)
 
-def getCoverage():
+def getCoverage(id):
     
-    response = requests.get(ciresturl+'/builds/id:147694/statistics',headers)
+    response = requests.get(ciresturl+'/builds/id:'+id+'/statistics',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
+    
     for tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-        print tag['name']+':'+tag['value']
+       print tag['name']+':'+tag['value']
+    
+       
+soup = bs4.BeautifulSoup(response.content, "html.parser")
+for tag in soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(r"169")}):
+    job=tag['buildtypeid']
+
+    getCoverage(tag['id'])
+    
+
     
                    
     
-getCoverage()
+
     
 
