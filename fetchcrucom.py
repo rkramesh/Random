@@ -10,7 +10,7 @@ from collections import defaultdict
 #from itertools import islice
 #from linecache import getline
 searchprint = '(CR-\d+.*?)'
-rawdata = '16.9log'
+rawdata = '16.8.txt'
 dupdata = 'data.txt'
 sortdata = 'sorted.txt'
 def findallreview():
@@ -214,7 +214,7 @@ def dota():
 def getcom():
      'Module for data to be fetched and parsed into csv'
      print 'started'
-     final = open(rawdata+'.txt', 'w')
+     final = open(rawdata+'-comments.txt', 'w')
      with open(sortdata, 'r') as f:
          for rid in f:
                 rid = rid.strip('\n')
@@ -230,7 +230,7 @@ def getcom():
                                                                '120 Safari/537.36'})
                 soup = bs4.BeautifulSoup(response.content, "html.parser")
                                                
-                tempfile='tmp/temp-'+rid+'.txt'
+                tempfile=r'tmp/temp-'+rid+'.txt'
                 wget.download(cmurl,tempfile)
                 
                 if soup.find_all(re.compile(r'message')):
