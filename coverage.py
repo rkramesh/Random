@@ -15,7 +15,7 @@ headers = {
     "Connection": "keep-alive",
     "Content-Type": "text/html;charset=utf-8"
 }
-response = requests.get(ciresturl+'/builds/',headers,stream=False)
+
 
 def getCoverage(id,bid):
     
@@ -30,7 +30,8 @@ def getCoverage(id,bid):
             print row
             with open('large.csv','a') as f1:
                 writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
-                writer.writerow(row.split()+[]+[bid])
+##                writer.writerow(row.split()+[',']+[bid])
+                writer.writerow(row.split()+[',',bid])
     else:
         print 'No Coverage Details found for'+bid
     
@@ -47,9 +48,10 @@ def getBuildtype():
 def getProject():
     response = requests.get(ciresturl+'/projects/',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
-    for proj_tag in soup.find_all('project', attrs={"href": re.compile(r'169')}):
+    for proj_tag in soup.find_all('project', attrs={"href": re.compile(r'16')}):
 ##        print proj_tag['id']
         proid=proj_tag['id']
+##        print proid
         
         getBuildtypeFromproject(proid)
 
@@ -60,13 +62,17 @@ def getBuildtypeFromproject(proid):
     
     for build_tag in soup.find_all('buildtype', attrs={"href": re.compile(r'Coverage')}):
             bid=build_tag["id"]
-            print build_tag["id"]
+            print bid
+            
             response = requests.get(ciresturl+'/builds/?locator=buildType:('+build_tag["id"]+')&count=1',headers,stream=False)
             rsoup = bs4.BeautifulSoup(response.content, "html.parser")
-##            print rsoup
-            buildid=rsoup.find(True,{'status':"SUCCESS","id":True})
-##            print buildid['id']
-            getCoverage(buildid['id'],bid)
+##            
+            if rsoup.find(True,{'status':"SUCCESS","id":True}):
+                buildid=rsoup.find(True,{'status':"SUCCESS","id":True})
+                getCoverage(buildid['id'],bid)
+            else:
+                print 'No Coverage Details found for'+bid
+            
         
 getProject()
 
