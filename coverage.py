@@ -25,7 +25,7 @@ def getCoverage(id,bid):
 ##        print '===='+job+'===='
         
         for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-            print cov_tag['name']+':'+cov_tag['value']
+            print cov_tag['name']+','+cov_tag['value']+','+bid
     else:
         print 'No Coverage Details found for'+bid
     
