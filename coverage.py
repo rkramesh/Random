@@ -1,5 +1,5 @@
 import wget
-import requests,bs4,re
+import requests,bs4,re,csv
 from credentials import *
 
 ##headers={'User-agent': 'Mozilla/5.0 (Windows NT '
@@ -25,7 +25,12 @@ def getCoverage(id,bid):
 ##        print '===='+job+'===='
         
         for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-            print cov_tag['name']+','+cov_tag['value']+','+bid
+##            print cov_tag['name']+','+cov_tag['value']
+            row=cov_tag['name']+','+cov_tag['value']
+            print row
+            with open('large.csv','a') as f1:
+                writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
+                writer.writerow(row.split()+[]+[bid])
     else:
         print 'No Coverage Details found for'+bid
     
@@ -64,15 +69,28 @@ def getBuildtypeFromproject(proid):
             getCoverage(buildid['id'],bid)
         
 getProject()
+
+def getbCoverage(id):
+    
+    response = requests.get(ciresturl+'/builds/id:'+id+'/statistics',headers,stream=False)
+    soup = bs4.BeautifulSoup(response.content, "html.parser")
+    if soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
+##        print '===='+job+'===='
+        
+        for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
+            row=[cov_tag['name']+','+cov_tag['value']]
+            print row
+            with open('large.csv','a') as f1:
+                writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
+                writer.writerow(row+[',berry'])
+    else:
+        print 'No Coverage Details found for'+bid
+
+##getbCoverage(id='147729')
+
 ##print '=============================='
 ##getBuildtype()
 ##        
 ##    if soup.find_all('buildtype', attrs={"id": re.compile("debugtestcoverage")}):    
-    
-
-    
-                   
-    
-
     
 
