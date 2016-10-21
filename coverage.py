@@ -17,7 +17,7 @@ headers = {
 }
 response = requests.get(ciresturl+'/builds/',headers,stream=False)
 
-def getCoverage(id):
+def getCoverage(id,bid):
     
     response = requests.get(ciresturl+'/builds/id:'+id+'/statistics',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
@@ -27,7 +27,7 @@ def getCoverage(id):
         for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
             print cov_tag['name']+':'+cov_tag['value']
     else:
-        print 'No id found'
+        print 'No Coverage Details found for'+bid
     
 def getBuildtype():
     response = requests.get(ciresturl+'/builds/',headers,stream=False)       
@@ -54,13 +54,14 @@ def getBuildtypeFromproject(proid):
     soup = bs4.BeautifulSoup(response.content, "html.parser")
     
     for build_tag in soup.find_all('buildtype', attrs={"href": re.compile(r'Coverage')}):
+            bid=build_tag["id"]
             print build_tag["id"]
             response = requests.get(ciresturl+'/builds/?locator=buildType:('+build_tag["id"]+')&count=1',headers,stream=False)
             rsoup = bs4.BeautifulSoup(response.content, "html.parser")
 ##            print rsoup
             buildid=rsoup.find(True,{'status':"SUCCESS","id":True})
-            print buildid['id']
-            getCoverage(buildid['id'])
+##            print buildid['id']
+            getCoverage(buildid['id'],bid)
         
 getProject()
 ##print '=============================='
