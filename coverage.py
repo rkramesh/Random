@@ -21,16 +21,44 @@ def getCoverage(id):
     
     response = requests.get(ciresturl+'/builds/id:'+id+'/statistics',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
+    if soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
+        print '===='+job+'===='
+        for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
+            print cov_tag['name']+':'+tag['value']
     
-    for tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-       print tag['name']+':'+tag['value']
-    
-       
-soup = bs4.BeautifulSoup(response.content, "html.parser")
-for tag in soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(r"169")}):
-    job=tag['buildtypeid']
+def getBuildtype():
+    response = requests.get(ciresturl+'/builds/',headers,stream=False)       
+    soup = bs4.BeautifulSoup(response.content, "html.parser")
+    if soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(".")}):
+       for build_tag in soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(".")}):
+            print build_tag['buildtypeid']
+##            getCoverage(tag['id'])
 
-    getCoverage(tag['id'])
+
+
+def getProject():
+    response = requests.get(ciresturl+'/projects/',headers,stream=False)
+    soup = bs4.BeautifulSoup(response.content, "html.parser")
+    for proj_tag in soup.find_all('project', attrs={"href": re.compile(r'169')}):
+##        print proj_tag['id']
+        proid=proj_tag['id']
+        
+        getBuildtypeFromproject(proid)
+
+
+def getBuildtypeFromproject(proid):
+    response = requests.get(ciresturl+'/projects/id:'+proid,headers,stream=False)       
+    soup = bs4.BeautifulSoup(response.content, "html.parser")
+    
+    for build_tag in soup.find_all('buildtype', attrs={"href": re.compile(r'Coverage')}):
+            print build_tag['id']
+##            getCoverage(tag['id'])
+        
+getProject()
+##print '=============================='
+##getBuildtype()
+##        
+##    if soup.find_all('buildtype', attrs={"id": re.compile("debugtestcoverage")}):    
     
 
     
