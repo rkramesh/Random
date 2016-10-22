@@ -1,12 +1,8 @@
 import wget
 import requests,bs4,re,csv
 from credentials import *
+release='162'
 
-##headers={'User-agent': 'Mozilla/5.0 (Windows NT '
-##                                 '6.2; WOW64) AppleWebKit/'
-##                                 '537.36 (KHTML, like '
-##                                 'Gecko) Chrome/37.0.2062.'
-##                                 '120 Safari/537.36'}
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0",
     "Accept-Encoding": "gzip, deflate",
@@ -39,7 +35,7 @@ def getBuildtype():
     response = requests.get(ciresturl+'/builds/',headers,stream=False)       
     soup = bs4.BeautifulSoup(response.content, "html.parser")
     if soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(".")}):
-       for build_tag in soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(".")}):
+       for build_tag in soup.find_all('build', attrs={'status':"SUCCESS","buildtypeid": re.compile(release)}):
             print build_tag['buildtypeid']
 ##            getCoverage(tag['id'])
 
@@ -48,7 +44,7 @@ def getBuildtype():
 def getProject():
     response = requests.get(ciresturl+'/projects/',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
-    for proj_tag in soup.find_all('project', attrs={"href": re.compile(r'16')}):
+    for proj_tag in soup.find_all('project', attrs={"href": re.compile(release)}):
 ##        print proj_tag['id']
         proid=proj_tag['id']
 ##        print proid
