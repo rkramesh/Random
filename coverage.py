@@ -1,7 +1,7 @@
 import wget
 import requests,bs4,re,csv
 from credentials import *
-release='169'
+release='165'
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0",
@@ -23,12 +23,16 @@ def getCoverage(id,buildtag,proj_tag):
         for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
 
             row=cov_tag['name']+','+cov_tag['value']
-            pid=proj_tag['name']
-##            print row
-            with open('All_release.csv','a') as f1:
+
+            with open(release+'.csv','a') as f1:
                 writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
                 print 'Fetching coverage results for '+proj_tag["name"]
-                writer.writerow(row.split()+[',', proj_tag["name"]])
+                try:
+                    writer.writerow(row.split()+[',', proj_tag["name"]])
+                except(UnicodeEncodeError):
+                    writer.writerow(row.split()+[',', proj_tag["name"].encode('utf-8')])
+                    
+                    
     else:
         print 'No Coverage Details found for '+proj_tag["name"]
     
@@ -46,11 +50,8 @@ def getProject():
     response = requests.get(ciresturl+'/projects/',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
     for proj_tag in soup.find_all('project', attrs={"href": re.compile(release)}):
-##        print proj_tag['id']
-##        proid=proj_tag['id']
-##        print proj_tag['name']
-##        print proid
-        
+##        print proj_tag
+       
         getBuildtypeFromproject(proj_tag)
 
 
@@ -60,51 +61,20 @@ def getBuildtypeFromproject(proj_tag):
     soup = bs4.BeautifulSoup(response.content, "html.parser")
     
     for build_tag in soup.find_all('buildtype', attrs={"href": re.compile(r'Coverage')}):
-##            bid=build_tag["id"]
-##            print bid
+
             
             response = requests.get(ciresturl+'/builds/?locator=buildType:('+build_tag["id"]+')&count=1',headers,stream=False)
             rsoup = bs4.BeautifulSoup(response.content, "html.parser")
-##            
+          
             if rsoup.find(True,{'status':"SUCCESS","id":True}):
                 buildid=rsoup.find(True,{'status':"SUCCESS","id":True})
                 getCoverage(buildid['id'],build_tag,proj_tag)
             else:
-                print 'No Coverage Details found for'+build_tag["id"]
+                print 'No Coverage Details found for '+proj_tag["name"]
             
-        
 getProject()
 
-def getbCoverage(id):
-    
-    response = requests.get(ciresturl+'/builds/id:'+id+'/statistics',headers,stream=False)
-    soup = bs4.BeautifulSoup(response.content, "html.parser")
-    if soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-##        print '===='+job+'===='
-        
-        for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
-            row=[cov_tag['name']+','+cov_tag['value']]
-            print row
-            with open(release+'new.csv','a') as f1:
-                writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
-                writer.writerow(row+[',berry'])
-    else:
-        print 'No Coverage Details found for'+bid
 
-##def get_num(x):
-##    return int(''.join(ele for ele in x if ele.isdigit()))
-##def get_float(x):
-##    return float(''.join(ele for ele in x if ele.isdigit() or ele == '.'))
-##def get_rel(x):
-##    return 
-##
-##filr='C:\Users\radhakrishnanr\Desktop\cov.txt'
-##with open(r'C:\Users\radhakrishnanr\Desktop\cov.txt','r') as cov:
-##    for line in cov:
-##        try:
-##            print get_num(line), line.split('_')
-##            
-##        except:
-##            print 'no',line
+
 
 
