@@ -4,7 +4,6 @@ import re
 import urllib2
 import urllib
 import csv,requests,bs4,linecache,wget,codecs,tempfile
-
 import xmltodict
 from collections import defaultdict
 #from itertools import islice
