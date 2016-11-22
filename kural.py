@@ -23,14 +23,19 @@ def scrape(url):
                                                    'Gecko) Chrome/37.0.2062.'
                                                    '120 Safari/537.36'})
     rk=response.content
+    #rk = "\n".join(rk.split("<br />"))
+    
     d = yaml.load(rk)
+    
     for tag in d['Data']:
-        print tag['EnglishMeaning']
+        print "\n".join(tag['Tamil'].split("<br />"))# replacing break statement with new line statement
+        print "\n".join(tag['English'].split("<br />"))
+        print "\n".join(tag['KalaignarUrai'].split("<br />"))
         
 ##['Index', 'Tamil', 'EnglishMeaning', 'MuVaUrai', 'English', 'KalaignarUrai', 'SolomonPaapaiyaUrai', 'TamilTransliteration']          
      
       
         
-search('now') 
+search('now')
 
 
