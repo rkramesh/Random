@@ -3,7 +3,7 @@ import glob
 from collections import defaultdict
 
 def csvReview():
-    os.chdir(r'C:\Users\radhakrishnanr\Desktop\filescsv')
+    os.chdir(r'C:\Users\yourloc\Desktop\filescsv')
     for file in glob.glob("*.csv"):
         columns = defaultdict(list) # each value in each column is appended to a list
 
@@ -35,10 +35,10 @@ def csvComment():
      with open('sorted.txt', 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv'
+               durl='http://fisheye.com/cru/'+line+'/reviewHistory.csv'
                print durl
                testfile = urllib.URLopener()
-               testfile.retrieve('http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
+               testfile.retrieve('http://fisheye.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
 
 
 def csvFinalReview():
@@ -46,10 +46,10 @@ def csvFinalReview():
      with open('sorted.txt', 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv'
+               durl='http://fisheye.com/cru/'+line+'/reviewHistory.csv'
                print durl
                testfile = urllib.URLopener()
-               testfile.retrieve('http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
+               testfile.retrieve('http://fisheye.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
                columns = defaultdict(list) # each value in each column is appended to a list
                with open(line+'.csv') as f:
                     reader = csv.DictReader(f) # read rows into a dictionary format
