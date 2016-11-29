@@ -1,7 +1,9 @@
 import wget
 import requests,bs4,re,csv
 from credentials import *
-release='165'
+
+#ciresturl='http://username:password@url/app/rest'
+release='.'
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0",
@@ -13,7 +15,7 @@ headers = {
 }
 
 
-def getCoverage(id,buildtag,proj_tag):
+def getCoverage(id,build_tag,proj_tag):
     
     response = requests.get(ciresturl+'/builds/id:'+id+'/statistics',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
@@ -22,7 +24,7 @@ def getCoverage(id,buildtag,proj_tag):
         
         for cov_tag in soup.find_all('property', attrs={"name": re.compile(r"Code*")}):
 
-            row=cov_tag['name']+','+cov_tag['value']
+            row=cov_tag['name']+','+cov_tag['value']+','+build_tag["id"]
 
             with open(release+'.csv','a') as f1:
                 writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
@@ -49,8 +51,9 @@ def getCoverage(id,buildtag,proj_tag):
 def getProject():
     response = requests.get(ciresturl+'/projects/',headers,stream=False)
     soup = bs4.BeautifulSoup(response.content, "html.parser")
+    
     for proj_tag in soup.find_all('project', attrs={"href": re.compile(release)}):
-##        print proj_tag
+       
        
         getBuildtypeFromproject(proj_tag)
 
@@ -69,11 +72,11 @@ def getBuildtypeFromproject(proj_tag):
             if rsoup.find(True,{'status':"SUCCESS","id":True}):
                 buildid=rsoup.find(True,{'status':"SUCCESS","id":True})
                 getCoverage(buildid['id'],build_tag,proj_tag)
+               
             else:
                 print 'No Coverage Details found for '+proj_tag["name"]
             
 getProject()
-
 
 
 
