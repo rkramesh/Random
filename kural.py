@@ -6,7 +6,7 @@ import sys
 import bs4
 import requests
 import logging
-import ast,json,yaml
+import ast,json,yaml,sqlite3
 def search(query):
 
     url='http://api.gokulnath.com/thirukkuralchapters/5/thirukkurals'
@@ -27,15 +27,55 @@ def scrape(url):
     
     d = yaml.load(rk)
     
-    for tag in d['Data']:
-        print "\n".join(tag['Tamil'].split("<br />"))# replacing break statement with new line statement
-        print "\n".join(tag['English'].split("<br />"))
-        print "\n".join(tag['KalaignarUrai'].split("<br />"))
+    
+    
+####    for tag in d['Data']:
+####        print tag['Index']
+##        print tag['English']
+##          print "\n".join(tag['English'].split("<br />"))
+##          print '\n'
+##        print "\n".join(tag['Tamil'].split("<br />"))# replacing break statement with new line statement
+##        print "\n".join(tag['English'].split("<br />"))
+##        print "\n".join(tag['KalaignarUrai'].split("<br />"))
         
-##['Index', 'Tamil', 'EnglishMeaning', 'MuVaUrai', 'English', 'KalaignarUrai', 'SolomonPaapaiyaUrai', 'TamilTransliteration']          
-     
-      
+##['Index', 'Tamil', 'EnglishMeaning', 'English', 'KalaignarUrai', 'SolomonPaapaiyaUrai', 'TamilTransliteration']          
+    
+    conn = sqlite3.connect('rk.db')
+    cursor = conn.cursor()
+    print "Opened database successfully"
+    for i,tag in enumerate (d['Data']):
+        item = [
+        tag['Index'],
+        tag['Tamil'],
+        tag['EnglishMeaning'],
+        tag['English'],
+        tag['KalaignarUrai'],
+        tag['SolomonPaapaiyaUrai'],
+        tag['TamilTransliteration'],
+        ]
+
+        print item[4]
         
+####        print str(i)+,tag['Index'],tag['English'],tag['EnglishMeaning']',tag['EnglishMeaning'],tag['EnglishMeaning'],tag['EnglishMeaning'],tag['EnglishMeaning'])
+####        cursor.execute("INSERT INTO KURAL (ID,ADIKAR,TAMIL,ENGLISH,MUVAURAI,KALAURAI,SOLOURAI,TAMTRANS)VALUES ("+str(i)+",'look','look','look','look','look','look','look')")
+####        cursor.execute("INSERT INTO KURAL VALUES (NULL,"+str(tag['Index'])+
+####                       ","+str(tag['Index'])+
+####                       ","+str(tag['Index'])+
+####                       ","+str(tag['Index'])+
+####                       ","+str(tag['Index'])+
+####                       ","+str(tag['Index'])+
+####                       ","+str(tag['Index'])+
+####                       ")")
+##        query="INSERT INTO KURAL VALUES (NULL,?,?,?,?,?,?,?)"
+##        cursor.execute(query,item)
+##        
+##    conn.commit()
+##    conn.close()
+##
+####       conn.commit()
+######    cursor = conn.execute("SELECT * from KURAL")
+######    for row in cursor:
+######        print row
+
+
 search('now')
-
-
