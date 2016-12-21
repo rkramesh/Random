@@ -1,4 +1,4 @@
-__author__      = "Rk"
+﻿__author__      = "Rk"
 __license__ = "GPL"
 __version__ = "1.0.1"
 import bs4,time,re
