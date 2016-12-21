@@ -1,12 +1,12 @@
-import os, re
-import bs4,time,yaml,json
+__author__      = "Rk"
+__license__ = "GPL"
+__version__ = "1.0.1"
+import bs4,time,re
 import requests
-from pprint import pprint
-
 class Score(object):
 
     def __init__(self):
-        #will be using it for enhancements
+        #will be using it for future enhancements
         pass
    
     @staticmethod
@@ -19,7 +19,7 @@ class Score(object):
                                                        'Gecko) Chrome/37.0.2062.'
                                                        '120 Safari/537.36'})
         soup = bs4.BeautifulSoup(response.content, "html.parser")
-        optionlist={}
+        optionlist={}#live match options
         for count,tag in enumerate (soup.find_all('li',{'class':re.compile('cb-lst-mtch')})):
             print ("Enter '{}' for '{}' ".format(count,tag.a['title']))
             optionlist[count] = tag.a['href']
@@ -32,7 +32,6 @@ class Score(object):
     @staticmethod
     def getScore(url):
         while True:
-            
             response = requests.get(url,
                                     headers={'User-agent': 'Mozilla/5.0 (Windows NT '
                                                            '6.2; WOW64) AppleWebKit/'
@@ -48,7 +47,7 @@ class Score(object):
                 match='live'
             else:
                 match='past'
-            duplicate=''
+            duplicate=''#remove duplicate commentary
             for tag in soup.find_all(re.compile('.')):
                 try:
                     if match == 'live':
@@ -59,20 +58,12 @@ class Score(object):
                         else:
                             print tag.p.text+'\n'
                             duplicate=len(tag.p.text)
-                        
-                        
                 except:
                     pass
-                
             if match == 'past':
                 break
             else:
-                time.sleep(12)
-                    
-                    
-                
-            
-
+                time.sleep(12)#live matches will be updated every 12 seconds
 Score.getMatch()
     
 
