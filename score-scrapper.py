@@ -1,4 +1,4 @@
-﻿__author__      = "Rk"
+__author__  = "Rk"
 __license__ = "GPL"
 __version__ = "1.0.1"
 import bs4,time,re
@@ -8,7 +8,6 @@ class Score(object):
     def __init__(self):
         #will be using it for future enhancements
         pass
-   
     @staticmethod
     def getMatch():
         url='http://www.cricbuzz.com/api/html/matches-menu'
