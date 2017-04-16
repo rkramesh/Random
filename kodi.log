@@ -1,0 +1,259 @@
+﻿23:56:41 T:2927736960  NOTICE: special://profile/ is mapped to: special://masterprofile/
+23:56:41 T:2927736960  NOTICE: -----------------------------------------------------------------------
+23:56:41 T:2927736960  NOTICE: Starting Kodi from Debian (15.2 Git: (unknown)). Platform: Linux x86 32-bit
+23:56:41 T:2927736960  NOTICE: Using Release Kodi from Debian x32 build
+23:56:41 T:2927736960  NOTICE: Kodi from Debian compiled from 15.2+dfsg1-3ubuntu1 by GCC 5.3.1 for Linux x86 32-bit version 4.4.6 (263174)
+23:56:41 T:2927736960  NOTICE: Running on Ubuntu 16.04.2 LTS, kernel: Linux x86 32-bit version 4.4.0-72-generic
+23:56:41 T:2927736960  NOTICE: FFmpeg version: 2.8.6-1ubuntu2
+23:56:41 T:2927736960  NOTICE: Host CPU: Pentium(R) Dual-Core CPU T4400 @ 2.20GHz, 2 cores available
+23:56:41 T:2927736960  NOTICE: special://xbmc/ is mapped to: /usr/share/kodi
+23:56:41 T:2927736960  NOTICE: special://xbmcbin/ is mapped to: /usr/lib/i386-linux-gnu/kodi
+23:56:41 T:2927736960  NOTICE: special://masterprofile/ is mapped to: /home/jarvis/.kodi/userdata
+23:56:41 T:2927736960  NOTICE: special://home/ is mapped to: /home/jarvis/.kodi
+23:56:41 T:2927736960  NOTICE: special://temp/ is mapped to: /home/jarvis/.kodi/temp
+23:56:41 T:2927736960  NOTICE: The executable running is: /usr/lib/i386-linux-gnu/kodi/kodi.bin
+23:56:41 T:2927736960  NOTICE: Local hostname: jarvis-ubuntu
+23:56:41 T:2927736960  NOTICE: Log File is located: /home/jarvis/.kodi/temp/kodi.log
+23:56:41 T:2927736960  NOTICE: -----------------------------------------------------------------------
+23:56:41 T:2927736960   ERROR: DBus: Error org.freedesktop.DBus.Error.InvalidArgs - No such property 'OnLowBattery'
+23:56:41 T:2927736960   ERROR: DBus: Error org.freedesktop.DBus.Error.InvalidArgs - No such property 'CanSuspend'
+23:56:41 T:2927736960   ERROR: DBus: Error org.freedesktop.DBus.Error.InvalidArgs - No such property 'CanHibernate'
+23:56:41 T:2927736960  NOTICE: load settings...
+23:56:41 T:2927736960  NOTICE: Found 1 Lists of Devices
+23:56:41 T:2927736960  NOTICE: Enumerated PULSE devices:
+23:56:41 T:2927736960  NOTICE:     Device 1
+23:56:41 T:2927736960  NOTICE:         m_deviceName      : Default
+23:56:41 T:2927736960  NOTICE:         m_displayName     : Default
+23:56:41 T:2927736960  NOTICE:         m_displayNameExtra: Default Output Device (PULSEAUDIO)
+23:56:41 T:2927736960  NOTICE:         m_deviceType      : AE_DEVTYPE_PCM
+23:56:41 T:2927736960  NOTICE:         m_channels        : FL,FR
+23:56:41 T:2927736960  NOTICE:         m_sampleRates     : 5512,8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000,384000
+23:56:41 T:2927736960  NOTICE:         m_dataFormats     : AE_FMT_U8,AE_FMT_S16NE,AE_FMT_S24NE3,AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_FLOAT
+23:56:41 T:2927736960  NOTICE:     Device 2
+23:56:41 T:2927736960  NOTICE:         m_deviceName      : alsa_output.pci-0000_00_1b.0.analog-stereo
+23:56:41 T:2927736960  NOTICE:         m_displayName     : Built-in Audio Analog Stereo
+23:56:41 T:2927736960  NOTICE:         m_displayNameExtra: Speakers (PULSEAUDIO)
+23:56:41 T:2927736960  NOTICE:         m_deviceType      : AE_DEVTYPE_PCM
+23:56:41 T:2927736960  NOTICE:         m_channels        : FL,FR
+23:56:41 T:2927736960  NOTICE:         m_sampleRates     : 5512,8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000,384000
+23:56:41 T:2927736960  NOTICE:         m_dataFormats     : AE_FMT_U8,AE_FMT_S16NE,AE_FMT_S24NE3,AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_FLOAT
+23:56:41 T:2927736960  NOTICE: No settings file to load (special://xbmc/system/advancedsettings.xml)
+23:56:41 T:2927736960  NOTICE: No settings file to load (special://masterprofile/advancedsettings.xml)
+23:56:41 T:2927736960  NOTICE: Default DVD Player: dvdplayer
+23:56:41 T:2927736960  NOTICE: Default Video Player: dvdplayer
+23:56:41 T:2927736960  NOTICE: Default Audio Player: paplayer
+23:56:41 T:2927736960  NOTICE: Disabled debug logging due to GUI setting. Level 0.
+23:56:41 T:2927736960  NOTICE: Log level changed to "LOG_LEVEL_NORMAL"
+23:56:41 T:2927736960  NOTICE: Loading player core factory settings from special://xbmc/system/playercorefactory.xml.
+23:56:41 T:2927736960  NOTICE: Loaded playercorefactory configuration
+23:56:41 T:2927736960  NOTICE: Loading player core factory settings from special://masterprofile/playercorefactory.xml.
+23:56:41 T:2927736960  NOTICE: special://masterprofile/playercorefactory.xml does not exist. Skipping.
+23:56:41 T:2860612416  NOTICE: Thread ActiveAE start, auto delete: false
+23:56:41 T:2927725376  NOTICE: Thread AESink start, auto delete: false
+23:56:41 T:2927725376  NOTICE: PulseAudio: Opened device Default in pcm mode with Buffersize 326 ms
+23:56:41 T:2927736960  NOTICE: Running database version Addons19
+23:56:41 T:2927736960  NOTICE: ADDONS: Using repository repository.xbmc.org
+23:56:41 T:2927736960  NOTICE: ADDONS: Using repository repository.romanvm
+23:56:41 T:2907700032  NOTICE: Thread RemoteControl start, auto delete: false
+23:56:41 T:2927736960  NOTICE: Setup SDL
+23:56:41 T:2927736960  NOTICE: Checking resolution 15
+23:56:41 T:2927736960  NOTICE: Using visual 0x20
+23:56:41 T:2927736960  NOTICE: GL_VENDOR = Intel Open Source Technology Center
+23:56:41 T:2927736960  NOTICE: GL_RENDERER = Mesa DRI Mobile Intel® GM45 Express Chipset x86/MMX/SSE2
+23:56:41 T:2927736960  NOTICE: GL_VERSION = 2.1 Mesa 12.0.6
+23:56:41 T:2927736960  NOTICE: GL_SHADING_LANGUAGE_VERSION = 1.20
+23:56:41 T:2927736960  NOTICE: GL_EXTENSIONS = GL_ARB_multisample GL_EXT_abgr GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_copy_texture GL_EXT_polygon_offset GL_EXT_subtexture GL_EXT_texture_object GL_EXT_vertex_array GL_EXT_compiled_vertex_array GL_EXT_texture GL_EXT_texture3D GL_IBM_rasterpos_clip GL_ARB_point_parameters GL_EXT_draw_range_elements GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal GL_EXT_separate_specular_color GL_EXT_texture_edge_clamp GL_SGIS_generate_mipmap GL_SGIS_texture_border_clamp GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_ARB_framebuffer_sRGB GL_ARB_multitexture GL_EXT_framebuffer_sRGB GL_IBM_multimode_draw_arrays GL_IBM_texture_mirrored_repeat GL_3DFX_texture_compression_FXT1 GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_transpose_matrix GL_EXT_blend_func_separate GL_EXT_fog_coord GL_EXT_multi_draw_arrays GL_EXT_secondary_color GL_EXT_texture_env_add GL_EXT_texture_filter_anisotropic GL_EXT_texture_lod_bias GL_INGR_blend_func_separate GL_NV_blend_square GL_NV_light_max_exponent GL_NV_texgen_reflection GL_NV_texture_env_combine4 GL_S3_s3tc GL_SUN_multi_draw_arrays GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_EXT_framebuffer_object GL_EXT_texture_compression_s3tc GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_MESA_window_pos GL_NV_packed_depth_stencil GL_NV_texture_rectangle GL_ARB_depth_texture GL_ARB_occlusion_query GL_ARB_shadow GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_mirrored_repeat GL_ARB_window_pos GL_EXT_stencil_two_side GL_EXT_texture_cube_map GL_NV_depth_clamp GL_APPLE_packed_pixels GL_APPLE_vertex_array_object GL_ARB_draw_buffers GL_ARB_fragment_program GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_vertex_program GL_ARB_vertex_shader GL_ATI_draw_buffers GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_MESA_pack_invert GL_NV_primitive_restart GL_ARB_depth_clamp GL_ARB_fragment_program_shadow GL_ARB_half_float_pixel GL_ARB_occlusion_query2 GL_ARB_point_sprite GL_ARB_shading_language_100 GL_ARB_sync GL_ARB_texture_non_power_of_two GL_ARB_vertex_buffer_object GL_ATI_blend_equation_separate GL_EXT_blend_equation_separate GL_OES_read_format GL_ARB_color_buffer_float GL_ARB_pixel_buffer_object GL_ARB_texture_compression_rgtc GL_ARB_texture_float GL_ARB_texture_rectangle GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_EXT_texture_shared_exponent GL_ARB_framebuffer_object GL_EXT_framebuffer_blit GL_EXT_packed_depth_stencil GL_APPLE_object_purgeable GL_ARB_vertex_array_object GL_ATI_separate_stencil GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_gpu_program_parameters GL_EXT_texture_array GL_EXT_texture_integer GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_draw_instanced GL_ARB_half_float_vertex GL_ARB_instanced_arrays GL_ARB_map_buffer_range GL_ARB_texture_rg GL_ARB_texture_swizzle GL_ARB_vertex_array_bgra GL_EXT_texture_swizzle GL_EXT_vertex_array_bgra GL_NV_conditional_render GL_AMD_seamless_cubemap_per_texture GL_ARB_ES2_compatibility GL_ARB_debug_output GL_ARB_draw_elements_base_vertex GL_ARB_explicit_attrib_location GL_ARB_fragment_coord_conventions GL_ARB_provoking_vertex GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_shader_texture_lod GL_ARB_texture_rgb10_a2ui GL_ARB_vertex_type_2_10_10_10_rev GL_EXT_provoking_vertex GL_EXT_texture_snorm GL_MESA_texture_signed_rgba GL_NV_texture_barrier GL_ARB_get_program_binary GL_ARB_robustness GL_ARB_separate_shader_objects GL_ARB_shader_bit_encoding GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ARB_compressed_texture_pixel_storage GL_ARB_internalformat_query GL_ARB_map_buffer_alignment GL_ARB_texture_storage GL_AMD_shader_trinary_minmax GL_ARB_arrays_of_arrays GL_ARB_clear_buffer_object GL_ARB_copy_image GL_ARB_explicit_uniform_location GL_ARB_invalidate_subdata GL_ARB_program_interface_query GL_ARB_vertex_attrib_binding GL_KHR_debug GL_KHR_robustness GL_ARB_buffer_storage GL_ARB_clear_texture GL_ARB_internalformat_query2 GL_ARB_multi_bind GL_ARB_seamless_cubemap_per_texture GL_ARB_shader_draw_parameters GL_ARB_texture_mirror_clamp_to_edge GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_clip_control GL_ARB_get_texture_sub_image GL_ARB_pipeline_statistics_query GL_ARB_texture_barrier GL_EXT_polygon_offset_clamp GL_KHR_context_flush_control
+23:56:41 T:2708458304  NOTICE: Thread PeripBusCEC start, auto delete: false
+23:56:41 T:2700065600  NOTICE: Thread PeripBusUSBUdev start, auto delete: false
+23:56:41 T:2927736960  NOTICE: Running database version Addons19
+23:56:41 T:2927736960  NOTICE: Running database version ViewModes6
+23:56:41 T:2927736960  NOTICE: Running database version Textures13
+23:56:41 T:2927736960  NOTICE: Running database version MyMusic52
+23:56:41 T:2927736960  NOTICE: Running database version MyVideos93
+23:56:41 T:2927736960  NOTICE: Running database version TV29
+23:56:41 T:2927736960  NOTICE: Running database version Epg10
+23:56:41 T:2927736960  NOTICE: start dvd mediatype detection
+23:56:41 T:2869033792  NOTICE: Thread DetectDVDMedia start, auto delete: false
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font10(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font12(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font13(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font14(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font16(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font30(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: fontContextMenu(roboto-regular.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font10_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font12_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font13_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font24_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font28_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font30_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font35_title(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: font_MainMenu(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960   ERROR: Couldn't load font name: WeatherTemp(roboto-bold.ttf), trying to substitute arial.ttf
+23:56:42 T:2927736960 WARNING: JSONRPC: Could not parse type "PVR.Details.Channel"
+23:56:42 T:2927736960 WARNING: JSONRPC: Could not parse type "PVR.Details.ChannelGroup.Extended"
+23:56:42 T:2927736960 WARNING: JSONRPC: Could not parse type "GUI.Property.Value"
+23:56:42 T:2927736960 WARNING: JSONRPC: Could not parse type "Setting.Details.SettingList"
+23:56:42 T:2927736960  NOTICE: initialize done
+23:56:42 T:2927736960  NOTICE: Running the application...
+23:56:42 T:2611493696  NOTICE: Thread LanguageInvoker start, auto delete: false
+23:56:42 T:2569628480  NOTICE: Previous line repeats 2 times.
+23:56:42 T:2569628480  NOTICE: Thread JobWorker start, auto delete: true
+23:56:42 T:2927736960  NOTICE: starting zeroconf publishing
+23:56:42 T:2927736960  NOTICE: Webserver: Starting...
+23:56:42 T:2927736960  NOTICE: WebServer: Started the webserver
+23:56:42 T:2927736960  NOTICE: starting upnp client
+23:56:42 T:2552843072  NOTICE: Thread JobWorker start, auto delete: true
+23:56:42 T:2927736960  NOTICE: starting upnp server
+23:56:42 T:2927736960  NOTICE: starting upnp controller
+23:56:42 T:2927736960  NOTICE: starting upnp renderer
+23:56:42 T:2927736960  NOTICE: ES: Starting event server
+23:56:42 T:2443737920  NOTICE: Thread TCPServer start, auto delete: false
+23:56:42 T:2452130624  NOTICE: Thread EventServer start, auto delete: false
+23:56:42 T:2452130624  NOTICE: ES: Starting UDP Event server on 0.0.0.0:9777
+23:56:42 T:2452130624  NOTICE: UDP: Listening on port 9777
+23:56:42 T:2603100992  NOTICE: -->Python Interpreter Initialized<--
+23:56:44 T:2611493696  NOTICE: Previous line repeats 2 times.
+23:56:44 T:2611493696  NOTICE: Started fetching details..
+23:56:46 T:2284276544  NOTICE: Thread BackgroundLoader start, auto delete: false
+23:56:48 T:2426952512  NOTICE: Thread LanguageInvoker start, auto delete: false
+23:56:49 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: dirname:/home/jarvis/.kodi/temp/xbmcup/script.module.libtorrent/python_libtorrent
+23:56:49 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: set_version:4 1.0.9
+23:56:49 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: try to fetch libtorrent.so
+23:56:55 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: https://github.com/DiMartinoXBMC/script.module.libtorrent/raw/master/python_libtorrent/linux_x86/1.0.9/libtorrent.so.zip -> /home/jarvis/.kodi/temp/xbmcup/script.module.libtorrent/python_libtorrent/linux_x86/1.0.9/libtorrent.so
+23:56:57 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: platform: {'os': 'linux', 'message': ["Linux has static compiled python-libtorrent included but it didn't work.", 'You should install it by "sudo apt-get install python-libtorrent"'], 'version': '1.0.9', 'arch': 'x86', 'system': 'linux_x86'}
+23:56:57 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: os: ('Linux', 'jarvis-ubuntu', '4.4.0-72-generic', '#93-Ubuntu SMP Fri Mar 31 14:07:23 UTC 2017', 'i686')
+23:56:57 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: ucs4
+23:56:57 T:2603100992  NOTICE: ### [python-libtorrent v.1.1.1c]: Imported libtorrent v1.0.9.0 from "/home/jarvis/.kodi/temp/xbmcup/script.module.libtorrent/python_libtorrent/linux_x86/1.0.9"
+23:56:57 T:2426952512  NOTICE: -->Python Interpreter Initialized<--
+23:56:58 T:2215459648  NOTICE: Thread BackgroundLoader start, auto delete: false
+23:56:58 T:2611493696  NOTICE: Fetching details..Completed!
+23:57:07 T:2190281536  NOTICE: Thread LanguageInvoker start, auto delete: false
+23:57:07 T:2190281536  NOTICE: -->Python Interpreter Initialized<--
+23:57:08 T:2190281536  NOTICE: Started fetching details..
+23:57:12 T:2190281536  NOTICE: Fetching details..Completed!
+23:59:50 T:2611493696   ERROR: plugin.video.rk.tv [v.3.6.1]: Failed to load torrents from rarbg.to!
+23:59:50 T:2611493696   ERROR: plugin.video.rk.tv [v.3.6.1]: Traceback (most recent call last):
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/libs/autodownloader.py", line 131, in filter_torrents
+                                                torrents = get_torrents('list', limit='50', show_info=False, episode_info=False)
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/libs/torrent_info.py", line 234, in get_torrents
+                                                raw_torrents = rarbg.load_torrents(rarbg_query)
+                                              File "/home/jarvis/.kodi/addons/script.module.simpleplugin/libs/simpleplugin.py", line 661, in inner_wrapper
+                                                return self._get_cached_data(cache, func, duration, *args, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/script.module.simpleplugin/libs/simpleplugin.py", line 636, in _get_cached_data
+                                                data = func(*args, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/libs/rarbg.py", line 97, in load_torrents
+                                                rk=response['torrent_results']
+                                            TypeError: 'Response' object has no attribute '__getitem__'
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: Unhandled exception detected!
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: *** Start diagnostic info ***
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: File: /home/jarvis/.kodi/addons/script.module.requests/lib/requests/adapters.py
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: Code context:
+                                              485:                 raise ProxyError(e, request=request)
+                                              486: 
+                                              487:>            raise ConnectionError(e, request=request)
+                                              488: 
+                                              489:         except ClosedPoolError as e:
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: Global variables:
+                                            BaseAdapter = <class 'requests.adapters.BaseAdapter'>
+                                            CaseInsensitiveDict = <class 'requests.structures.CaseInsensitiveDict'>
+                                            ClosedPoolError = <class 'requests.packages.urllib3.exceptions.ClosedPoolError'>
+                                            ConnectTimeout = <class 'requests.exceptions.ConnectTimeout'>
+                                            ConnectTimeoutError = <class 'requests.packages.urllib3.exceptions.ConnectTimeoutError'>
+                                            ConnectionError = <class 'requests.exceptions.ConnectionError'>
+                                            DEFAULT_CA_BUNDLE_PATH = '/home/jarvis/.kodi/addons/script.module.requests/lib/requests/cacert.pem'
+                                            DEFAULT_POOLBLOCK = False
+                                            DEFAULT_POOLSIZE = 10
+                                            DEFAULT_POOL_TIMEOUT = None
+                                            DEFAULT_RETRIES = 0
+                                            HTTPAdapter = <class 'requests.adapters.HTTPAdapter'>
+                                            HTTPResponse = <class 'requests.packages.urllib3.response.HTTPResponse'>
+                                            InvalidSchema = <class 'requests.exceptions.InvalidSchema'>
+                                            MaxRetryError = <class 'requests.packages.urllib3.exceptions.MaxRetryError'>
+                                            NewConnectionError = <class 'requests.packages.urllib3.exceptions.NewConnectionError'>
+                                            PoolManager = <class 'requests.packages.urllib3.poolmanager.PoolManager'>
+                                            ProtocolError = <class 'requests.packages.urllib3.exceptions.ProtocolError'>
+                                            ProxyError = <class 'requests.exceptions.ProxyError'>
+                                            ReadTimeout = <class 'requests.exceptions.ReadTimeout'>
+                                            ReadTimeoutError = <class 'requests.packages.urllib3.exceptions.ReadTimeoutError'>
+                                            Response = <class 'requests.models.Response'>
+                                            ResponseError = <class 'requests.packages.urllib3.exceptions.ResponseError'>
+                                            Retry = <class 'requests.packages.urllib3.util.retry.Retry'>
+                                            RetryError = <class 'requests.exceptions.RetryError'>
+                                            SOCKSProxyManager = <function SOCKSProxyManager at 0x9097841c>
+                                            SSLError = <class 'requests.exceptions.SSLError'>
+                                            TimeoutSauce = <class 'requests.packages.urllib3.util.timeout.Timeout'>
+                                            _HTTPError = <class 'requests.packages.urllib3.exceptions.HTTPError'>
+                                            _ProxyError = <class 'requests.packages.urllib3.exceptions.ProxyError'>
+                                            _SSLError = <class 'requests.packages.urllib3.exceptions.SSLError'>
+                                            _basic_auth_str = <function _basic_auth_str at 0x9096e25c>
+                                            basestring = <type 'basestring'>
+                                            extract_cookies_to_jar = <function extract_cookies_to_jar at 0x9094e02c>
+                                            get_auth_from_url = <function get_auth_from_url at 0x90953ae4>
+                                            get_encoding_from_headers = <function get_encoding_from_headers at 0x909535dc>
+                                            os = <module 'os' from '/usr/lib/python2.7/os.py'>
+                                            prepend_scheme_if_needed = <function prepend_scheme_if_needed at 0x90953aac>
+                                            proxy_from_url = <function proxy_from_url at 0x90a30bc4>
+                                            select_proxy = <function select_proxy at 0x9095387c>
+                                            socket = <module 'socket' from '/usr/lib/python2.7/socket.py'>
+                                            to_native_string = <function to_native_string at 0x909307d4>
+                                            urldefragauth = <function urldefragauth at 0x90953b54>
+                                            urlparse = <function urlparse at 0x8630a064>
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: Local variables:
+                                            cert = None
+                                            chunked = False
+                                            conn = <requests.packages.urllib3.connectionpool.HTTPConnectionPool object at 0x991667cc>
+                                            e = MaxRetryError("HTTPConnectionPool(host='tamilrockers.im', port=80): Max retries exceeded with url: /index.php/topic/52882- (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x99166c2c>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))",)
+                                            proxies = OrderedDict()
+                                            request = <PreparedRequest [GET]>
+                                            self = <requests.adapters.HTTPAdapter object at 0x9916654c>
+                                            stream = False
+                                            timeout = <requests.packages.urllib3.util.timeout.Timeout object at 0x9916662c>
+                                            url = '/index.php/topic/52882-'
+                                            verify = True
+00:00:20 T:2190281536   ERROR: plugin.video.rk.tv [v.3.6.1]: **** End diagnostic info ****
+00:00:20 T:2190281536   ERROR: EXCEPTION Thrown (PythonToCppException) : -->Python callback/script returned the following error<--
+                                             - NOTE: IGNORING THIS CAN LEAD TO MEMORY LEAKS!
+                                            Error Type: <class 'requests.exceptions.ConnectionError'>
+                                            Error Contents: HTTPConnectionPool(host='tamilrockers.im', port=80): Max retries exceeded with url: /index.php/topic/52882- (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x99166c2c>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+                                            Traceback (most recent call last):
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/main.py", line 12, in <module>
+                                                plugin.run()
+                                              File "/home/jarvis/.kodi/addons/script.module.simpleplugin/libs/simpleplugin.py", line 1026, in run
+                                                result = action_callable(params)
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/libs/actions.py", line 251, in episodes
+                                                episode_info=myshows),
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/libs/torrent_info.py", line 234, in get_torrents
+                                                raw_torrents = rarbg.load_torrents(rarbg_query)
+                                              File "/home/jarvis/.kodi/addons/script.module.simpleplugin/libs/simpleplugin.py", line 661, in inner_wrapper
+                                                return self._get_cached_data(cache, func, duration, *args, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/script.module.simpleplugin/libs/simpleplugin.py", line 636, in _get_cached_data
+                                                data = func(*args, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/plugin.video.rk.tv/libs/rarbg.py", line 73, in load_torrents
+                                                r = requests.get(i)
+                                              File "/home/jarvis/.kodi/addons/script.module.requests/lib/requests/api.py", line 70, in get
+                                                return request('get', url, params=params, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/script.module.requests/lib/requests/api.py", line 56, in request
+                                                return session.request(method=method, url=url, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/script.module.requests/lib/requests/sessions.py", line 488, in request
+                                                resp = self.send(prep, **send_kwargs)
+                                              File "/home/jarvis/.kodi/addons/script.module.requests/lib/requests/sessions.py", line 609, in send
+                                                r = adapter.send(request, **kwargs)
+                                              File "/home/jarvis/.kodi/addons/script.module.requests/lib/requests/adapters.py", line 487, in send
+                                                raise ConnectionError(e, request=request)
+                                            ConnectionError: HTTPConnectionPool(host='tamilrockers.im', port=80): Max retries exceeded with url: /index.php/topic/52882- (Caused by NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object at 0x99166c2c>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+                                            -->End of Python script error report<--
+00:00:20 T:2927725376  NOTICE: PulseAudio: Opened device Default in pcm mode with Buffersize 326 ms
+00:00:20 T:2927736960   ERROR: GetDirectory - Error getting plugin://plugin.video.rk.tv/?action=episodes&mode=list
+00:00:20 T:2927736960   ERROR: CGUIMediaWindow::GetDirectory(plugin://plugin.video.rk.tv/?action=episodes&mode=list) failed
+00:00:20 T:2190281536  NOTICE: Thread LanguageInvoker start, auto delete: false
+00:00:20 T:2190281536  NOTICE: -->Python Interpreter Initialized<--
+00:00:21 T:2918185792  NOTICE: Thread BackgroundLoader start, auto delete: false
+00:00:34 T:2190281536  NOTICE: Previous line repeats 1 times.
+00:00:34 T:2190281536  NOTICE: Thread LanguageInvoker start, auto delete: false
+00:00:34 T:2190281536  NOTICE: -->Python Interpreter Initialized<--
+00:00:35 T:2190281536   ERROR: EXCEPTION: Non-Existent Control 1
+00:00:35 T:2918185792  NOTICE: Thread BackgroundLoader start, auto delete: false
+00:00:40 T:2918185792  NOTICE: Thread LanguageInvoker start, auto delete: false
+00:00:40 T:2918185792  NOTICE: -->Python Interpreter Initialized<--
+00:00:41 T:2918185792 WARNING: Attempt to use invalid handle -1
