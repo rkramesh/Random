@@ -2,8 +2,8 @@ import wget
 import requests,bs4,re,csv
 from credentials import *
 
-#ciresturl='http://username:password@url/app/rest'
-release='.'
+ciresturl='http://raramesh:Rbc@2021@10.244.48.146/app/rest'
+release='17'
 
 headers = {
     "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0",
