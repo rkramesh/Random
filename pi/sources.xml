@@ -5,8 +5,8 @@
     <video>
         <default pathversion="1"></default>
         <source>
-            <name>alphadisk2</name>
-            <path pathversion="1">http://alphamediazone.com/data/disk2/</path>
+            <name>S01</name>
+            <path pathversion="1">http://s6.bitdownload.ir/Game.of.thrones/S01/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
@@ -19,33 +19,48 @@
     <files>
         <default pathversion="1"></default>
         <source>
-            <name>.fusion</name>
-            <path pathversion="1">http://fusion.tvaddons.ag/</path>
+            <name>1</name>
+            <path pathversion="1">1/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>Noobs </name>
-            <path pathversion="1">http://noobsandnerds.com/portal/</path>
+            <name>alphamedia</name>
+            <path pathversion="1">http://alphamediazone.com/data/disk2/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>Downloado-Movie</name>
+            <name>mihanpix</name>
+            <path pathversion="1">http://dl2.mihanpix.com/film/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>movieinfo</name>
+            <path pathversion="1">http://moviezwap.info</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>evonet</name>
+            <path pathversion="1">http://fs.evonetbd.com/Media/Movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Downloado</name>
             <path pathversion="1">http://dl2.downloado.site/dl2/Movie/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>dl-Movie</name>
-            <path pathversion="1">http://dl.my-film.in/Movie/</path>
+            <name>HDD2</name>
+            <path pathversion="1">http://103.66.178.220/ftp/HDD2/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>lap-WINDOWS</name>
-            <path pathversion="1">/mnt/3A69737C71051E1C/WINDOWS/</path>
+            <name>fastmovie</name>
+            <path pathversion="1">http://mc1.dl3enter.in/files/d2/Movie/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>alpha-Movie</name>
-            <path pathversion="1">http://alphamediazone.com/data/disk2</path>
+            <name>Game of Thrones</name>
+            <path pathversion="1">http://s6.bitdownload.ir/Game.of.thrones/S01/</path>
             <allowsharing>true</allowsharing>
         </source>
     </files>
