@@ -5,8 +5,23 @@
     <video>
         <default pathversion="1"></default>
         <source>
-            <name>S01</name>
-            <path pathversion="1">http://s6.bitdownload.ir/Game.of.thrones/S01/</path>
+            <name>serial</name>
+            <path pathversion="1">http://dl.my-film.in/serial/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>DL-Movie</name>
+            <path pathversion="1">http://dl.my-film.in/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Tamil Movies</name>
+            <path pathversion="1">http://www.opticalmediazone.com/ftpdata/Movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>evMovies</name>
+            <path pathversion="1">http://fs.evonetbd.com/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
@@ -61,6 +76,11 @@
         <source>
             <name>Game of Thrones</name>
             <path pathversion="1">http://s6.bitdownload.ir/Game.of.thrones/S01/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Fast serial</name>
+            <path pathversion="1">http://dl.my-film.in/serial/</path>
             <allowsharing>true</allowsharing>
         </source>
     </files>
