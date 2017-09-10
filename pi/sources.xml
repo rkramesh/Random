@@ -1,0 +1,52 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+        <source>
+            <name>alphadisk2</name>
+            <path pathversion="1">http://alphamediazone.com/data/disk2/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+        <source>
+            <name>.fusion</name>
+            <path pathversion="1">http://fusion.tvaddons.ag/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Noobs </name>
+            <path pathversion="1">http://noobsandnerds.com/portal/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Downloado-Movie</name>
+            <path pathversion="1">http://dl2.downloado.site/dl2/Movie/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>dl-Movie</name>
+            <path pathversion="1">http://dl.my-film.in/Movie/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>lap-WINDOWS</name>
+            <path pathversion="1">/mnt/3A69737C71051E1C/WINDOWS/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>alpha-Movie</name>
+            <path pathversion="1">http://alphamediazone.com/data/disk2</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </files>
+</sources>
