@@ -21,7 +21,17 @@
         </source>
         <source>
             <name>evMovies</name>
-            <path pathversion="1">http://fs.evonetbd.com/</path>
+            <path pathversion="1">http://fs.evonetbd.com/index.php/?dir=Movies/Tamil%20Movies%20/Tamil%20Movies%20/2017/Guru%20%5B2017%5D/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Game Of Thrones</name>
+            <path pathversion="1">http://dl.dlfile.pro/6/Series/Game%20Of%20Thrones/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>GOT-fast</name>
+            <path pathversion="1">http://dl.dlfile.pro/6/Series/Game%20Of%20Thrones/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
@@ -81,6 +91,16 @@
         <source>
             <name>Fast serial</name>
             <path pathversion="1">http://dl.my-film.in/serial/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Ares</name>
+            <path pathversion="1">http://ares-repo.eu/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>.aresd</name>
+            <path pathversion="1">http://toptutorialsrepo.co.uk/kodi/</path>
             <allowsharing>true</allowsharing>
         </source>
     </files>
