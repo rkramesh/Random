@@ -30,8 +30,18 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>GOT-fast</name>
-            <path pathversion="1">http://dl.dlfile.pro/6/Series/Game%20Of%20Thrones/</path>
+            <name>SERIAL-HD</name>
+            <path pathversion="1">http://www.time-tu-v2.com/movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>SERIAL-GOT</name>
+            <path pathversion="1">tt/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>dl.funsaber.net</name>
+            <path pathversion="1">http://dl.funsaber.net/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
@@ -84,8 +94,8 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>Game of Thrones</name>
-            <path pathversion="1">http://s6.bitdownload.ir/Game.of.thrones/S01/</path>
+            <name>Game of Thrones-s6</name>
+            <path pathversion="1">http://s6.bitdownload.ir/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
