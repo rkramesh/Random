@@ -5,12 +5,12 @@
     <video>
         <default pathversion="1"></default>
         <source>
-            <name>serial</name>
-            <path pathversion="1">http://dl.my-film.in/serial/</path>
+            <name>Mihanpix</name>
+            <path pathversion="1">http://dl2.mihanpix.com/film/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>DL-Movie</name>
+            <name>DL-MYFILM</name>
             <path pathversion="1">http://dl.my-film.in/</path>
             <allowsharing>true</allowsharing>
         </source>
@@ -20,13 +20,13 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>evMovies</name>
-            <path pathversion="1">http://fs.evonetbd.com/index.php/?dir=Movies/Tamil%20Movies%20/Tamil%20Movies%20/2017/Guru%20%5B2017%5D/</path>
+            <name>20MYDL</name>
+            <path pathversion="1">http://20.mydl.host/Download/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
             <name>Game Of Thrones</name>
-            <path pathversion="1">http://dl.dlfile.pro/6/Series/Game%20Of%20Thrones/</path>
+            <path pathversion="1">http://dl.dlfile.pro/6/Series/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -35,13 +35,18 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>SERIAL-GOT</name>
-            <path pathversion="1">tt/</path>
+            <name>DLHA</name>
+            <path pathversion="1">http://dl.movieo.ir/dlha/files</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
             <name>dl.funsaber.net</name>
             <path pathversion="1">http://dl.funsaber.net/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>timepass</name>
+            <path pathversion="1">http://server1.timepassbd.com/ftpdata1/Movies/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
@@ -95,7 +100,7 @@
         </source>
         <source>
             <name>Game of Thrones-s6</name>
-            <path pathversion="1">http://s6.bitdownload.ir/</path>
+            <path pathversion="1">http://s6.bitdownload.ir/Game.of.thrones/S05/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
