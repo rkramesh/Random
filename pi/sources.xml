@@ -11,7 +11,7 @@
         </source>
         <source>
             <name>DL-MYFILM</name>
-            <path pathversion="1">http://dl.my-film.in/</path>
+            <path pathversion="1">http://dl.my-film.in/s1/Movie/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -36,7 +36,7 @@
         </source>
         <source>
             <name>DLHA</name>
-            <path pathversion="1">http://dl.movieo.ir/dlha/files</path>
+            <path pathversion="1">http://dl.movieo.ir/dlha/files/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -47,6 +47,26 @@
         <source>
             <name>timepass</name>
             <path pathversion="1">http://server1.timepassbd.com/ftpdata1/Movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>film-Reza</name>
+            <path pathversion="1">http://dl.my-film.in/reza/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>uploaded-videos</name>
+            <path pathversion="1">http://103.67.198.6/uploaded-videos/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>dlst-vip</name>
+            <path pathversion="1">http://dlst18.in/dl/vip/film/3/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Jeff-Movies</name>
+            <path pathversion="1">http://jeff.tdrealms.com/Movies/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
