@@ -147,7 +147,7 @@ def dictcsvFinalReview():
                durl='http://fisheye.com/cru/'+line+'/reviewHistory.csv'
                print durl
                testfile = urllib.URLopener()
-               os.chdir(r'C:\Users\radhakrishnanr\Desktop\filescsv')
+               os.chdir(r'C:\Users\ra\Desktop\filescsv')
                testfile.retrieve('http://fisheye.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
                columns = defaultdict(list) # each value in each column is appended to a list
                with open(line+'.csv') as f:
