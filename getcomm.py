@@ -14,7 +14,7 @@ class getReview(object):
         print 'Fetching comments for %s from %s'% (self.rid,self.filename)
 
     def getRe(self):
-        rurl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+self.rid+'/comments/'
+        rurl ='http://fisheye.com/rest-service/reviews-v1/'+self.rid+'/comments/'
                 
                 
         response = requests.get(rurl,
