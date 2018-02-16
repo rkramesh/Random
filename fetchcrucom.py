@@ -144,7 +144,7 @@ def dictcsvFinalReview():
      with open(sortdata, 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv'
+               durl='http://fisheye.com/cru/'+line+'/reviewHistory.csv'
                print durl
                testfile = urllib.URLopener()
                os.chdir(r'C:\Users\radhakrishnanr\Desktop\filescsv')
