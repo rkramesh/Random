@@ -49,7 +49,7 @@ def finddata():
      with open(sortdata, 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.cuc.com/cru/'+line+'/comments.txt'
+               durl='http://fisheye.com/cru/'+line+'/comments.txt'
                print durl
                response = urllib2.urlopen(durl)
                op = response.read()
@@ -78,7 +78,7 @@ def findcomment():
      with open(sortdata, 'r') as f:
           for line in f:
            line = line.strip('\n')
-           durl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+line+'/comments/'
+           durl ='http://fisheye.com/rest-service/reviews-v1/'+line+'/comments/'
            print durl
            response = urllib2.urlopen(durl)
            op = response.read()
@@ -93,8 +93,8 @@ def findcsvcomment():
          for line in f:
                line = line.strip('\n')
                #print line
-               #durl ='http://fisheye.cuc.com/cru/'+line+'/reviewHistoryWrapper?content=details'
-               durl ='http://fisheye.cuc.com/cru/'+line+'/reviewHistory'
+               #durl ='http://fisheye.com/cru/'+line+'/reviewHistoryWrapper?content=details'
+               durl ='http://fisheye.com/cru/'+line+'/reviewHistory'
                print durl
                try:
                    response = urllib2.urlopen(durl)
@@ -116,10 +116,10 @@ def csvComment():
      with open(sortdata, 'r') as f:
          for line in f:
                line = line.strip('\n')
-               durl='http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv'
+               durl='http://fisheyecom/cru/'+line+'/reviewHistory.csv'
                print durl
                testfile = urllib.URLopener()
-               testfile.retrieve('http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
+               testfile.retrieve('http://fisheye.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
                with open(line+'.csv') as f:
                     columns = defaultdict(list) # each value in each column is appended to a list
                     reader = csv.DictReader(f) # read rows into a dictionary format
@@ -148,7 +148,7 @@ def dictcsvFinalReview():
                print durl
                testfile = urllib.URLopener()
                os.chdir(r'C:\Users\radhakrishnanr\Desktop\filescsv')
-               testfile.retrieve('http://fisheye.cuc.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
+               testfile.retrieve('http://fisheye.com/cru/'+line+'/reviewHistory.csv', line+'.csv')
                columns = defaultdict(list) # each value in each column is appended to a list
                with open(line+'.csv') as f:
                     reader = csv.DictReader(f) # read rows into a dictionary format
@@ -171,7 +171,7 @@ def dictcsvFinalReview():
 
 def cota():
                line='cr-4914'
-               durl='http://fisheye.cuc.com/cru/cr-4914/comments.txt'
+               durl='http://fisheye.com/cru/cr-4/comments.txt'
                print durl
                response = urllib2.urlopen(durl)
                op = response.read()
@@ -200,7 +200,7 @@ def cota():
 def dota():
        'Dummy module for crucible rest services'
        line='cr-4914'
-       durl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+line+'/comments/'
+       durl ='http://fisheye.com/rest-service/reviews-v1/'+line+'/comments/'
        print durl
        response = urllib2.urlopen(durl)
        op = response.read()
@@ -217,8 +217,8 @@ def getcom():
      with open(sortdata, 'r') as f:
          for rid in f:
                 rid = rid.strip('\n')
-                cmurl='http://fisheye.cuc.com/cru/'+rid+'/comments.txt'
-                rurl ='http://fisheye.cuc.com/rest-service/reviews-v1/'+rid+'/comments/'
+                cmurl='http://fisheye.com/cru/'+rid+'/comments.txt'
+                rurl ='http://fisheye.com/rest-service/reviews-v1/'+rid+'/comments/'
                 
                 
                 response = requests.get(rurl,
