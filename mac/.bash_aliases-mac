@@ -1,0 +1,90 @@
+export HISTCONTROL=erasedups # don't store duplicate lines
+export HISTSIZE=100000 #remember 100k unique lines
+shopt -s histappend
+
+# Set Tab name to a Workingdrectory
+tab() {
+if [ "$PWD" != "$MYOLDPWD" ]; then
+MYOLDPWD="$PWD";
+printf "\e]1;${PWD##*/}\a"
+fi
+}
+export PROMPT_COMMAND=tab
+# Set window name to a custom string
+function winname {
+printf "\e]2;$1\a"
+}
+
+#fast type
+alias cd..='cd ../'                         # Go back 1  level
+alias ..='cd ../'                           # Go back 1  level
+alias ...='cd ../../'                       # Go back 2  levels
+alias .3='cd ../../../'                     # Go back 3  levels
+alias .4='cd ../../../../'                  # Go back 4  levels
+alias .5='cd ../../../../../'               # Go back 5  levels
+alias .6='cd ../../../../../../'            # Go back 6  levels
+alias c='clear'
+alias lt="ls -altr"
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias less='less -FSRXc'                    # Preferred 'less' implementation
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+
+
+#   extract:  Extract most know archives with one command
+#   ---------------------------------------------------------
+    extract () {
+        if [ -f $1 ] ; then
+          case $1 in
+            *.tar.bz2)   tar xjf $1     ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.rar)       unrar e $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xf $1      ;;
+            *.tbz2)      tar xjf $1     ;;
+            *.tgz)       tar xzf $1     ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *)     echo "'$1' cannot be extracted via extract()" ;;
+             esac
+         else
+             echo "'$1' is not a valid file"
+         fi
+    }
+# Python server
+#   ------------------------------------------------------------
+alias server='python -m SimpleHTTPServer 8000'
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+alias apt='sudo apt-get install -y'
+
+#pi
+
+ip="sudo nmap -nsP 192.168.1.250/24| grep -b2 'Pi' | sed  -r -n -e '1s#.*for\s(.*)#\1#p'"
+
+function pish
+{
+#ip=`sudo nmap -nsP 192.168.1.250/24| grep -b2 'Pi' | sed  -E -n -e '1s#.*for\s(.*)#\1#p'`
+sshpass -p osmc ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null osmc@192.168.1.222
+if [ "$?" != "0" ]
+then
+   ip=`sudo nmap -nsP 192.168.1.250/24| grep -b2 'Pi' | awk -F ' ' 'NR==1{print $5}'`
+   sshpass -p osmc ssh -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null osmc@192.168.1.222
+fi
+}
+
+#vi
+
+alias vi='vim'
+##aws
+adev() { ssh -i /Users/rk/Downloads/rk-key-pair.pem ec2-user@`list_instances | grep i-00173011d4a0794e9us-east-1a|awk -F ' ' '{print $2}'`; }
+alias kloc="cd /Users/rk/Library/Application\ Support/Kodi/"
+alias klog='tail -f /Users/rk/Library/Logs/kodi.log'
+alias klogclean='echo "" > /Users/rk/Library/Logs/kodi.log'
+kplay(){ kodi-send --action="PlayMedia($1)"; }
+

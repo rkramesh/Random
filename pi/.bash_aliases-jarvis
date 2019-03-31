@@ -46,3 +46,10 @@ alias vi='vim'
 alias klog="tail -f /home/jarvis/.kodi/temp/kodi.log"
 kboot() { killall -9 kodi.bin; /usr/bin/kodi & }
 alias 'krm'="find . -name *pyo | xargs rm
+
+adev() { ssh -i /Users/rk/Downloads/rk-key-pair.pem ec2-user@`list_instances | grep i-00173011d4a0794e9us-east-1a|awk -F ' ' '{print $2}'`; }
+alias kloc="cd /Users/rk/Library/Application\ Support/Kodi/"
+alias klog='tail -f /Users/rk/Library/Logs/kodi.log'
+alias klogclean='echo "" > /Users/rk/Library/Logs/kodi.log'
+kplay(){ kodi-send --action="PlayMedia($1)"; }
+
