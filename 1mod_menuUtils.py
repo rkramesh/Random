@@ -80,7 +80,7 @@ def fixWindowID(window):
 
 def getCmd(path, fanart, desc, window, filename, isFolder, meta, picture):
     cmd = _getCmd(path, fanart, desc, window, filename, isFolder, meta, picture)
-    logging.warning("{0} {1} {2} {0}".format ('!!'*15, 'cmd',favourite.fixCase(cmd)))
+    #logging.warning("{0} {1} {2} {0}".format ('!!'*15, 'cmd',favourite.fixCase(cmd)))
     return favourite.fixCase(cmd)
 
 
@@ -164,11 +164,11 @@ def copyFave(name, thumb, cmd):
         return False
     
     fave = [name, thumb, cmd] 
-    logging.warning("{0} {1} {2} {0}".format ('??'*15, file,fave))
+    #logging.warning("{0} {1} {2} {0}".format ('??'*15, file,fave))
   
     return favourite.copyFave(file, fave)
 
-def sendkodiFave(name, path, thumb):
+def sendkodiFave(superfolder, name, path, thumb):
 #    cmd = getCmd(path='http://dl8.heyserver.in/serial/The.Big.Bang.Theory/S01/480p/The.Big.Bang.Theory.S01E13.480p.BluRay.x264.mkv',fanart='',desc='',window=100025,filename=name,isFolder=False,meta={'label': name},picture='fanart')
     cmd = getCmd(path,fanart='',desc='',window=100025,filename=name,isFolder=False,meta={'label': name},picture='')
     import os
@@ -179,7 +179,7 @@ def sendkodiFave(name, path, thumb):
     #    return False
   
     #file  = os.path.join(folder, utils.FILENAME)   
-    file='/home/osmc/Super Favourites/rktest/favourites.xml'
+    file='/home/osmc/Super Favourites/'+superfolder+'/favourites.xml'
 
     if ADDON.getSetting('MENU_EDITFAVE') == 'true':
         name = getText(GETTEXT(30021), name)
@@ -188,12 +188,12 @@ def sendkodiFave(name, path, thumb):
         return False
     
     fave = [name, thumb, cmd] 
-    logging.warning("{0} {1} {2} {0}".format ('??'*15, file,fave))
+    #logging.warning("{0} {1} {2} {0}".format ('??'*15, file,fave))
   
     return favourite.copyFave(file, fave)
 
 def getDescription():
-    logging.warning("{0} {1} {2} {0}".format ('??'*15, 'file','fave'))
+    #logging.warning("{0} {1} {2} {0}".format ('??'*15, 'file','fave'))
     prefix= getPrefix()
 
     labels = []
@@ -394,7 +394,7 @@ def getCurrentMeta():
     
 
 def getCurrentParams():
-    logging.warning("{0} {1} {2} {0}".format ('##'*15, 'meta','params'))
+    #logging.warning("{0} {1} {2} {0}".format ('##'*15, 'meta','params'))
     prefix = getPrefix()
     
     window   = xbmcgui.getCurrentWindowId()
@@ -529,4 +529,4 @@ def doDownload(file):
 
 if __name__ == '__main__':
         if sys.argv[1] == 'addfolder':
-            sendkodiFave(name=sys.argv[2], path=sys.argv[3], thumb='DefaultVideo.png')
+            sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb='DefaultVideo.png')

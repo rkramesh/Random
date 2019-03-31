@@ -1,3 +1,4 @@
+#ifdef VERSION1
 # -*- coding: utf-8 -*-
 import json
 import os
@@ -6,6 +7,7 @@ import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
+import logging
 from youtube_dl import YoutubeDL
 
 
@@ -106,6 +108,13 @@ else:
 #    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,{0},{1}".format(result['title'],result['url']))
 #    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,'mahabalipuram','http.rockywinsnow')") 
 #    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,"+result['title']+","+result['url']+")") 
-    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,"+result['title'].encode('ascii', 'ignore').decode('ascii')+","+result['url']+")") 
+    logging.warning("{0} {1} {2} {0}".format ('??'*15, 'result-url',url))
+    try:
+        if 'ww.xvi' in str(url):
+            xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,corrupt,"+result['title'].encode('ascii', 'ignore').decode('ascii')+","+result['url']+")") 
+        else:
+            xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,MISC,"+result['title'].encode('ascii', 'ignore').decode('ascii')+","+result['url']+")") 
+    except Exception, e:
+        pass
 
-
+#endif /* VERSION1 */
