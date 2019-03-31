@@ -2,6 +2,20 @@ export HISTCONTROL=erasedups # don't store duplicate lines
 export HISTSIZE=100000 #remember 100k unique lines
 shopt -s histappend
 
+#mac
+# Set Tab name to a Workingdrectory
+tab() {
+	if [ "$PWD" != "$MYOLDPWD" ]; then
+		MYOLDPWD="$PWD";
+		printf "\e]1;${PWD##*/}\a"
+	fi
+}
+export PROMPT_COMMAND=tab
+# Set window name to a custom string
+function winname {
+	printf "\e]2;$1\a"
+}
+#mac
 #fast type
 alias cd..='cd ../'                         # Go back 1  level
 alias ..='cd ../'                           # Go back 1  level
@@ -11,6 +25,13 @@ alias .4='cd ../../../../'                  # Go back 4  levels
 alias .5='cd ../../../../../'               # Go back 5  levels
 alias .6='cd ../../../../../../'            # Go back 6  levels
 alias c='clear'
+alias lt="ls -altr"
+alias cp='cp -iv'                           # Preferred 'cp' implementation
+alias mv='mv -iv'                           # Preferred 'mv' implementation
+alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
+alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
+alias less='less -FSRXc'                    # Preferred 'less' implementation
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 
 # Python server
 #   ------------------------------------------------------------

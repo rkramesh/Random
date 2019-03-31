@@ -10,18 +10,18 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>DL-MYFILM</name>
-            <path pathversion="1">http://dl.my-film.in/s1/Movie/</path>
+            <name>VIP SERIES</name>
+            <path pathversion="1">http://content1.binodonmela.net/TVShow/The%20Big%20Bang%20Theory/Season%2011/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
             <name>Tamil Movies</name>
-            <path pathversion="1">http://www.opticalmediazone.com/ftpdata/Movies/</path>
+            <path pathversion="1">http://103.91.144.230/ftpdata/Movies/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>20MYDL</name>
-            <path pathversion="1">http://20.mydl.host/Download/</path>
+            <name>bbt</name>
+            <path pathversion="1">https://blog.tempwin.net/store/subs/The-Big-Bang-Theory/11/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -55,11 +55,6 @@
             <allowsharing>true</allowsharing>
         </source>
         <source>
-            <name>uploaded-videos</name>
-            <path pathversion="1">http://103.67.198.6/uploaded-videos/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
             <name>dlst-vip</name>
             <path pathversion="1">http://dlst18.in/dl/vip/film/3/</path>
             <allowsharing>true</allowsharing>
@@ -67,6 +62,16 @@
         <source>
             <name>Jeff-Movies</name>
             <path pathversion="1">http://jeff.tdrealms.com/Movies/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>The.Big.Bang.Theory</name>
+            <path pathversion="1">http://dl8.heyserver.in/serial/The.Big.Bang.Theory/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>osmc</name>
+            <path pathversion="1">/home/osmc/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>
@@ -138,5 +143,23 @@
             <path pathversion="1">http://toptutorialsrepo.co.uk/kodi/</path>
             <allowsharing>true</allowsharing>
         </source>
+        <source>
+            <name>lazy</name>
+            <path pathversion="1">http://lazykodi.com/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>transform</name>
+            <path pathversion="1"> https://mega-tron.tv/transform/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>osmc</name>
+            <path pathversion="1">/home/osmc/</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </files>
+    <games>
+        <default pathversion="1"></default>
+    </games>
 </sources>
