@@ -104,17 +104,13 @@ else:
     # Just a video, pass the item to the Kodi player.
     showInfoNotification("playing title " + result['title'])
     xbmcplugin.setResolvedUrl(__handle__, True, listitem=createListItemFromVideo(result))
-#    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,{0},{1},{2}".format('addfolder',result['title'],result['url']))
-#    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,{0},{1}".format(result['title'],result['url']))
-#    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,'mahabalipuram','http.rockywinsnow')") 
-#    xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,"+result['title']+","+result['url']+")") 
-    logging.warning("{0} {1} {2} {0}".format ('??'*15, 'result-url',url))
+    #logging.warning("{0} {1} {2} {0}".format ('??'*15, 'result-url',result['display_id']))
     try:
         if 'ww.xvi' in str(url):
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,corrupt,"+result['title'].encode('ascii', 'ignore').decode('ascii')+","+result['url']+")") 
+        elif 'ww.you' in str(url):
+            xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,MISC,"+result['title'].encode('ascii', 'ignore').decode('ascii')+",plugin://plugin.video.youtube/play/?video_id="+result['display_id']+")") 
         else:
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,MISC,"+result['title'].encode('ascii', 'ignore').decode('ascii')+","+result['url']+")") 
     except Exception, e:
         pass
-
-#endif /* VERSION1 */

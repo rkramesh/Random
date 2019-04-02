@@ -530,3 +530,5 @@ def doDownload(file):
 if __name__ == '__main__':
         if sys.argv[1] == 'addfolder':
             sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb='DefaultVideo.png')
+        elif sys.argv[1] == 'youtube':
+            sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb='DefaultVideo.png')
