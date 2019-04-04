@@ -170,7 +170,9 @@ def copyFave(name, thumb, cmd):
 
 def sendkodiFave(superfolder, name, path, thumb):
 #    cmd = getCmd(path='http://dl8.heyserver.in/serial/The.Big.Bang.Theory/S01/480p/The.Big.Bang.Theory.S01E13.480p.BluRay.x264.mkv',fanart='',desc='',window=100025,filename=name,isFolder=False,meta={'label': name},picture='fanart')
-    cmd = getCmd(path,fanart='',desc='',window=100025,filename=name,isFolder=False,meta={'label': name},picture='')
+    #cmd = getCmd(path,fanart='',desc='',window=100025,filename=name,isFolder=False,meta={'label': name},picture='')
+    cmd = getCmd(path,fanart=thumb,desc='',window=100025,filename=name,isFolder=False,meta={'label': name},picture='')
+    logging.warning("{0} {1} {2} {0}".format ('??'*15, 'cmd',cmd))
     import os
     text = GETTEXT(30019)
 
@@ -529,6 +531,8 @@ def doDownload(file):
 
 if __name__ == '__main__':
         if sys.argv[1] == 'addfolder':
-            sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb='DefaultVideo.png')
+            logging.warning("{0} {1} {2} {0}".format ('!!'*15, 'cmd',sys.argv))
+            sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb=sys.argv[5])
+            #sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb='DefaultVideo.png')
         elif sys.argv[1] == 'youtube':
-            sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb='DefaultVideo.png')
+            sendkodiFave(superfolder=sys.argv[2], name=sys.argv[3], path=sys.argv[4], thumb=sys.argv[5])
