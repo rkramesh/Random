@@ -105,12 +105,11 @@ else:
     xbmcplugin.setResolvedUrl(__handle__, True, listitem=createListItemFromVideo(result))
     #logging.warning("{0} {1} {2} {0}".format ('??'*15, 'result-url',result))
     try:
-        if 'ww.xvi' in str(url):
-            xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,addfolder,corrupt,"+result['title'].encode('ascii', 'ignore').decode('ascii')+","+result['url']+","+result['thumbnail']+")") 
+        if 'XV' in result['extractor']:
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','corrupt',result['title'].encode('ascii', 'ignore').decode('ascii'),result['url'],result['thumbnail'])) 
-        elif 'ww.you' in str(url):
+        elif 'youtube' in result['extractor']:
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','MISC',result['title'].encode('ascii', 'ignore').decode('ascii'),'plugin://plugin.video.youtube/play/?video_id='+result['display_id'],result['thumbnail'])) 
         else:
-            xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','MISC',result['title'].encode('ascii', 'ignore').decode('ascii'),result['url'],result['thumbnail'])) 
+            xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','MISC',result['title'].encode('ascii', 'ignore').decode('ascii'),result['url'],result.get('thumbnail','DefaultVideo.png'))) 
     except Exception, e:
         pass
