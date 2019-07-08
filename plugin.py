@@ -81,11 +81,12 @@ def make_request(url):
         if _country_code is not None:
             headers['x-country-code'] = _country_code
         #url='https://api.hotstar.com/h/v2/play/in/contents/1000237823?desiredConfig=encryption:widevine;ladder:phone;package:dash&client=mweb&clientVersion=6.27.0&deviceId=ccc64339-0655-4b4e-952e-a7429670b84f&osName=Mac%20OS&osVersion=10.14.4'
-
-        #response = session.get(url, headers=headers, cookies=session.cookies)
-        response = session.get(url+'?desiredConfig=encryption:widevine;ladderr:phone;package:dash&client=mweb&clientVersion=6.27.0&deviceId=ccc64339-0655-4b4e-952e-a7429670b84f&osName=Mac%20OS&osVersion=10.14.4', headers=headers, cookies=session.cookies)
+        if 'play' in url:
+           response = session.get(url+'?desiredConfig=encryption:widevine;ladderr:phone;package:dash&client=mweb&clientVersion=6.27.0&deviceId=ccc64339-0655-4b4e-952e-a7429670b84f&osName=Mac%20OS&osVersion=10.14.4', headers=headers, cookies=session.cookies)
+        else:    
+           response = session.get(url, headers=headers, cookies=session.cookies)
         data = response.json()
-        logger.info("######: {}, log: {}########".format(data, url))
+        #logger.info("######: {}, log: {}########".format(data, url))
         if data.get('statusCodeValue') == 200:
             return data
 
@@ -194,6 +195,7 @@ def list_program_details(title, uri):
 
 def _get_data(url):
     data = make_request(url)
+    #logger.info("######: {}, log: {}########".format('rk7', url))
     return {
         'items': _items(data['body']['results']),
         'nextPage': _next_page(data['body']['results'])
@@ -290,7 +292,9 @@ def _add_video_item(video):
     # Create a URL for a plugin recursive call.
     # Example: plugin://plugin.video.example/?action=play&video=http:
     # //www.vidsplay.com/wp-content/uploads/2017/04/crab.mp4
-    url = get_url(action='play', uri=video.get('playbackUri'))
+    #Changing path for api change
+    #path="https://api.hotstar.com/h/v2/play/in/contents/1000238814"
+    url = get_url(action='play', uri='https://api.hotstar.com/h/v2/play/in/contents/'+str(video.get('contentId')))
 
     # Add the list item to a virtual Kodi folder.
     # is_folder = False means that this item won't open any sub-list.
@@ -645,8 +649,9 @@ def get_url(**kwargs):
 
 
 def play_video(path):
+    #logger.info("######: {}, log: {}########".format('rk8', path))
     #original=https://api.hotstar.com/h/v1/play?contentId=1000238814
-    path="https://api.hotstar.com/h/v2/play/in/contents/1000238814"
+    #path="https://api.hotstar.com/h/v2/play/in/contents/1000238814"
     """
     Play a video by the provided path.
         #logger.info("######: {}, log: {}########".format('rk2', video))
@@ -656,7 +661,7 @@ def play_video(path):
     """
     # Create a playable item with a path to play.
     data = make_request(path)
-    logger.info("######: {}, log: {}########".format('rk3', path))
+    #logger.info("######: {}, log: {}########".format('rk3', path))
     if not data:
         return
 
@@ -682,7 +687,7 @@ def play_video(path):
 
         return subtitle_url
 
-    logger.info("######: {}, log: {}########".format('rk6', data))
+    #logger.info("######: {}, log: {}########".format('rk6', data))
     #item = data['body']['results']['item']
     item=data['body']['results']['playBackSets'][0]
     path = item['playbackUrl']
