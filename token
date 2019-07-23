@@ -1,0 +1,37 @@
+import base64
+import hashlib
+import time
+
+jctBase = "cutibeau2ic"
+ssoToken = "AQIC5wM2LY4SfczEZE2fGevb0t17TAm-G9kAMvxhtxL4oGU.*AAJTSQACMDIAAlNLABQtMTkwNjA5MTA1OTI5NDc0NTI1MgACUzEAAjQ4*"
+
+token=base64.b64encode(hashlib.md5(ssoToken).digest()).replace('+', '-').replace('/', '_').replace('=', '').replace("\n", "").replace("\r", "")
+
+def tokenFormat(ssoToken):
+    return base64.b64encode(hashlib.md5(ssoToken).digest()).replace('+', '-').replace('/', '_').replace('=', '').replace("\n", "").replace("\r", "")
+    
+
+
+def generateSt():
+    return tokenFormat(ssoToken)
+
+
+def generatePxe():
+    return  int(time.time())+ int(60000)
+
+def generateJct(st,pxe):    
+    return tokenFormat('{}{}{}'.format(jctBase,st,pxe))
+    
+  
+def generateToken():
+    st  = generateSt()
+    pxe = generatePxe()
+    jct = generateJct(st, pxe)
+    return '?jct=%s&pxe=%s&st=%s'%(jct,pxe,st)
+
+def updateToken():
+    currentToken = generateToken()
+    print currentToken
+    
+    
+updateToken()   
