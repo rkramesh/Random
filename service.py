@@ -1,3 +1,4 @@
+#ifdef VERSION1
 # -*- coding: utf-8 -*-
 import json
 import os
@@ -89,7 +90,7 @@ ydl.add_default_info_extractors()
 with ydl:
     showInfoNotification("resolving stream(s) for " + url)
     result = ydl.extract_info(url, download=False)
-
+raw_data='/home/osmc/MISC'
 if 'entries' in result:
     # Playlist
     pl = xbmc.PlayList(1)
@@ -109,7 +110,16 @@ else:
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','corrupt',result['title'].encode('ascii', 'ignore').decode('ascii'),result['url'],result['thumbnail'])) 
         elif 'youtube' in result['extractor']:
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','MISC',result['title'].encode('ascii', 'ignore').decode('ascii'),'plugin://plugin.video.youtube/play/?video_id='+result['display_id'],result['thumbnail'])) 
+            f = open(raw_data+'.m3u',"a")
+            #f.write('#EXTINF:-1, group-title="Youtube",{},tvg-logo={}'.format(result['title'].encode('ascii', 'ignore').decode('ascii'),result['thumbnail']) + '\n')
+            f.write('#EXTINF:-1 tvg-logo="{1}",{0}'.format(result['title'].encode('ascii', 'ignore').decode('ascii'),result['thumbnail']) + '\n')
+            f.write("plugin://plugin.video.youtube/play/?video_id={}".format(result['display_id']) + '\n')
         else:
             xbmc.executebuiltin("RunScript(special://home/addons/plugin.program.super.favourites/1mod_menuUtils.py,{0},{1},{2},{3},{4})".format('addfolder','MISC',result['title'].encode('ascii', 'ignore').decode('ascii'),result['url'],result.get('thumbnail','DefaultVideo.png'))) 
+            f = open(raw_data+'.m3u',"a")
+            #f.write('#EXTINF:-1, group-title="MISC",{},tvg-logo={}'.format(result['title'].encode('ascii', 'ignore').decode('ascii'),result.get('thumbnail','DefaultVideo.png')) + '\n')
+            f.write('#EXTINF:-1 tvg-logo="{1}",{0}'.format(result['title'].encode('ascii', 'ignore').decode('ascii'),result.get('thumbnail','DefaultVideo.png')) + '\n')
+            f.write("{}".format(result['url']) + '\n')
     except Exception, e:
         pass
+#endif /* VERSION1 */
