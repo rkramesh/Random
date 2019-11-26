@@ -60,7 +60,6 @@ fi
 alias vi='vim'
 
 #basic 
-
 #kodi
 alias kboot='sudo systemctl restart mediacenter'
 alias klog='tail -f /home/osmc/.kodi/temp/kodi.log'
