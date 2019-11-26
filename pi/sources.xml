@@ -5,68 +5,8 @@
     <video>
         <default pathversion="1"></default>
         <source>
-            <name>Mihanpix</name>
-            <path pathversion="1">http://dl2.mihanpix.com/film/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>VIP SERIES</name>
-            <path pathversion="1">http://content1.binodonmela.net/TVShow/The%20Big%20Bang%20Theory/Season%2011/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>Tamil Movies</name>
-            <path pathversion="1">http://103.91.144.230/ftpdata/Movies/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>bbt</name>
-            <path pathversion="1">https://blog.tempwin.net/store/subs/The-Big-Bang-Theory/11/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>Game Of Thrones</name>
-            <path pathversion="1">http://dl.dlfile.pro/6/Series/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>SERIAL-HD</name>
-            <path pathversion="1">http://www.time-tu-v2.com/movies/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>DLHA</name>
-            <path pathversion="1">http://dl.movieo.ir/dlha/files/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>dl.funsaber.net</name>
-            <path pathversion="1">http://dl.funsaber.net/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>timepass</name>
-            <path pathversion="1">http://server1.timepassbd.com/ftpdata1/Movies/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>film-Reza</name>
-            <path pathversion="1">http://dl.my-film.in/reza/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>dlst-vip</name>
-            <path pathversion="1">http://dlst18.in/dl/vip/film/3/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>Jeff-Movies</name>
-            <path pathversion="1">http://jeff.tdrealms.com/Movies/</path>
-            <allowsharing>true</allowsharing>
-        </source>
-        <source>
-            <name>The.Big.Bang.Theory</name>
-            <path pathversion="1">http://dl8.heyserver.in/serial/The.Big.Bang.Theory/</path>
+            <name>melli</name>
+            <path pathversion="1">http://dl.mellimovies.com/Movie_EN/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
@@ -74,9 +14,29 @@
             <path pathversion="1">/home/osmc/</path>
             <allowsharing>true</allowsharing>
         </source>
+        <source>
+            <name>iptv_home</name>
+            <path pathversion="1">/media/H/iptv_home/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>Tv Series</name>
+            <path pathversion="1">http://srv4.uploadsara.net/user/sajjad/Tv%20Series/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>hannibal</name>
+            <path pathversion="1">https://morphee.ninja/videos/</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </video>
     <music>
         <default pathversion="1"></default>
+        <source>
+            <name>songs</name>
+            <path pathversion="1">/media/H/songs/</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </music>
     <pictures>
         <default pathversion="1"></default>
@@ -156,6 +116,16 @@
         <source>
             <name>osmc</name>
             <path pathversion="1">/home/osmc/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>pi-plugins</name>
+            <path pathversion="1">/media/H/lap/pi-plugins/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>addons</name>
+            <path pathversion="1">https://ftp.acc.umu.se/mirror/addons.superrepo.org/v7/addons/</path>
             <allowsharing>true</allowsharing>
         </source>
     </files>
