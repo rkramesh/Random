@@ -1,0 +1,14 @@
+
+Things to be done for osmc
+
+create autoexec.py in userdata folder
+
+# create playlists from iTunes playlist file
+xbmc.executescript('special://home/scripts/py-up.py')
+
+
+add test.map/new.map to userdata folder
+
+add entry below entry in etc/rc.local
+
+ir-keytable -c -w /home/osmc/.kodi/userdata/test.map
