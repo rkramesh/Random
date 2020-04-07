@@ -1,6 +1,14 @@
 
 Things to be done for osmc
 
+gpu_mem_1024=256
+hdmi_ignore_cec_init=1
+disable_overscan=1
+start_x=1
+disable_splash=1
+dtoverlay=gpio-ir,gpio_pin=18
+~
+
 create autoexec.py in userdata folder
 
 # create playlists from iTunes playlist file
