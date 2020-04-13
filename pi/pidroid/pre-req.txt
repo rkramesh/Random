@@ -1,0 +1,9 @@
+create symbolic link to user script in /etc/init.d folder  
+
+-rwxr-xr-x  1 root shell  249 2020-02-07 20:32 90userinit
+-rwxr-xr-x  1 root shell  458 2020-02-07 20:32 00banner
+drwxr-xr-x 19 root root  4096 2020-02-08 21:39 ..
+lrwxrwxrwx  1 root root    25 2020-02-14 14:34 remote.sh -> /data/local/tmp/remote.sh
+drwxr-xr-x  2 root root  4096 2020-02-14 14:34 .
+rpi3:/etc/init.d # pwd
+/etc/init.d
