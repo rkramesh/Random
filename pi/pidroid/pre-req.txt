@@ -7,3 +7,16 @@ lrwxrwxrwx  1 root root    25 2020-02-14 14:34 remote.sh -> /data/local/tmp/remo
 drwxr-xr-x  2 root root  4096 2020-02-14 14:34 .
 rpi3:/etc/init.d # pwd
 /etc/init.d
+
+
+system/boot/etc
+
+# Script to mount Android Device as read/write.
+# List the Devices.
+adb devices;
+
+# Run adb as root (Needs root access).
+adb root;
+
+# Since you're running as root su is not required
+adb shell mount -o rw,remount /;
